@@ -37,6 +37,16 @@ namespace Progetto_API
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
+        private void buttons1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttons2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         /* static async Task<series> GetAlbumAsync(string path)
          {
              series Series = null;
