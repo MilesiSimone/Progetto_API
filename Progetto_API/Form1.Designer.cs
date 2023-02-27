@@ -28,13 +28,48 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.buttons1 = new Progetto_API.Buttons();
+            this.SuspendLayout();
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(253, 278);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(277, 22);
+            this.textBox1.TabIndex = 1;
+            // 
+            // buttons1
+            // 
+            this.buttons1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttons1.FlatAppearance.BorderSize = 0;
+            this.buttons1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttons1.ForeColor = System.Drawing.Color.White;
+            this.buttons1.Location = new System.Drawing.Point(280, 117);
+            this.buttons1.Name = "buttons1";
+            this.buttons1.Size = new System.Drawing.Size(211, 96);
+            this.buttons1.TabIndex = 0;
+            this.buttons1.Text = "buttons1";
+            this.buttons1.UseVisualStyleBackColor = false;
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.buttons1);
+            this.Name = "Form1";
             this.Text = "Form1";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private Buttons buttons1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
