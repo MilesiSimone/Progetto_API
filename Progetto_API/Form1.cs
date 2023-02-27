@@ -21,7 +21,12 @@ namespace Progetto_API
     public partial class Form1 : Form
     {
         static HttpClient client = new HttpClient();
-     /*   series Series = null;
+        
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+          /* series Series = null;*/
 
         public Form1()
         {
@@ -32,15 +37,16 @@ namespace Progetto_API
                 new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
-        static async Task<series> GetAlbumAsync(string path)
-        {
-            series Series = null;
-            HttpResponseMessage response = await client.GetAsync(path);
-            if (response.IsSuccessStatusCode)
-            {
-                Series = await JsonSerializer.DeserializeAsync<series>(await response.Content.ReadAsStreamAsync());
-            }
-            return Series;
-        }*/
+        /* static async Task<series> GetAlbumAsync(string path)
+         {
+             series Series = null;
+             HttpResponseMessage response = await client.GetAsync(path);
+             if (response.IsSuccessStatusCode)
+             {
+                 Series = await JsonSerializer.DeserializeAsync<series>(await response.Content.ReadAsStreamAsync());
+             }
+             return Series;
+         }
+           }*/
     }
 }
