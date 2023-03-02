@@ -31,6 +31,14 @@ namespace Progetto_API
         public Form1()
         {
             InitializeComponent();
+            panel_logo.BackColor = Color.FromArgb(0,38,64);
+            button_top_rated.BackColor = Color.FromArgb(0, 38, 64);
+            button_get_popular.BackColor = Color.FromArgb(0, 38, 64);
+            buttons_get_similar.BackColor = Color.FromArgb(0, 38, 64);
+            buttons_get_latest.BackColor = Color.FromArgb(0, 38, 64);
+            buttons_add_review.BackColor = Color.FromArgb(0, 38, 64);
+            buttons_delete_review.BackColor = Color.FromArgb(0, 38, 64);
+            label_benv.ForeColor = Color.FromArgb(0, 38, 64);
             client.BaseAddress = new Uri("https://jsonplaceholder.typicode.com");
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
@@ -39,10 +47,22 @@ namespace Progetto_API
 
         private void buttons1_Click(object sender, EventArgs e)
         {
-
+              Form2 f2 = new Form2();
+              f2.Show();
+              this.Hide();
         }
 
         private void buttons2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel_logo_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button_get_popular_Click(object sender, EventArgs e)
         {
 
         }

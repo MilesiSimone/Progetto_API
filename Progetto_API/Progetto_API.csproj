@@ -86,10 +86,25 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="panel\panel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Buttons.resx">
+      <DependentUpon>Buttons.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -99,6 +114,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -113,6 +129,63 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\badge.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\badge %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\badge %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\badge %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popular.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\popular %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\badge %284%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-top-rated-64.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-popular-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\esss.PNG" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-top-rated-64 %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-top-rated-64 %282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-discussione-molto-in-voga-40.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-similar-items-80.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-similar-items-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tv-60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-tv-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-thumbs-up-down-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icons8-delete-45.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
