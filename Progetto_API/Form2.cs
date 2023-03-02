@@ -27,7 +27,7 @@ namespace Progetto_API
 
         private void label_torna_indietro_MouseHover(object sender, EventArgs e)
         {
-           
+           //label_torna_indietro.;
         }
 
         private void label_torna_indietro_Click(object sender, EventArgs e)

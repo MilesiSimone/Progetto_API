@@ -93,6 +93,16 @@ namespace Progetto_API.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap icons8_left_arrow_25 {
+            get {
+                object obj = ResourceManager.GetObject("icons8_left_arrow_25", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icons8_popular_50 {
             get {
                 object obj = ResourceManager.GetObject("icons8_popular_50", resourceCulture);
