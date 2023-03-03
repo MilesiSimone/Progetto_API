@@ -20,7 +20,6 @@ namespace Progetto_API
 {
     public partial class Form1 : Form
     {
-        static HttpClient client = new HttpClient();
         
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -39,10 +38,6 @@ namespace Progetto_API
             buttons_add_review.BackColor = Color.FromArgb(0, 38, 64);
             buttons_delete_review.BackColor = Color.FromArgb(0, 38, 64);
             label_benv.ForeColor = Color.FromArgb(0, 38, 64);
-            client.BaseAddress = new Uri("https://jsonplaceholder.typicode.com");
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(
-                new MediaTypeWithQualityHeaderValue("application/json"));
         }
 
         private void buttons1_Click(object sender, EventArgs e)
