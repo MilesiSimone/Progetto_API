@@ -30,11 +30,4 @@ namespace Progetto_API
             public float vote_average { get; set; }
             public int vote_count { get; set; }
         }
-
-        /*
-        override
-         public string ToString()
-         {
-             return "{" + Environment.NewLine + "'postId': " + postId + "," + Environment.NewLine + "'id': " + id + "," + Environment.NewLine + "'name': " + name + "," + Environment.NewLine + "'email': " + email + "," + Environment.NewLine + "'body': " + body + Environment.NewLine + "}";
-         }*/
 }

@@ -25,7 +25,6 @@ namespace Progetto_API
         {
 
         }
-          /* series Series = null;*/
 
         public Form1()
         {
@@ -42,7 +41,7 @@ namespace Progetto_API
 
         private void buttons1_Click(object sender, EventArgs e)
         {
-              Form2 f2 = new Form2();
+              Form2 f2 = new Form2(this, button_top_rated.Text);
               f2.Show();
               this.Hide();
         }
@@ -59,19 +58,9 @@ namespace Progetto_API
 
         private void button_get_popular_Click(object sender, EventArgs e)
         {
-
+            Form2 f2 = new Form2(this, button_get_popular.Text);
+            f2.Show();
+            this.Hide();
         }
-
-        /* static async Task<series> GetAlbumAsync(string path)
-         {
-             series Series = null;
-             HttpResponseMessage response = await client.GetAsync(path);
-             if (response.IsSuccessStatusCode)
-             {
-                 Series = await JsonSerializer.DeserializeAsync<series>(await response.Content.ReadAsStreamAsync());
-             }
-             return Series;
-         }
-           }*/
     }
 }
