@@ -105,7 +105,7 @@ namespace Progetto_API
 
         private async void buttons1_Click(object sender, EventArgs e)
         {
-            Root_Series = await GetSeriesAsync($"?api_key={api_key}&language={comboBox_selected_language.Text}&page={numericUpDown_n_pagine.Value}");
+            Root_Series = await GetSeriesAsync($"?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
             label_total_results.Text = Root_Series.total_results.ToString();
            
                 label_prova.Text = Root_Series.results[2].name;
