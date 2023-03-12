@@ -23,7 +23,6 @@ namespace Progetto_API
         static HttpClient client = null;
         public Rootobject Root_Series { set; get; }
    
-        int i = 0;
         string image_path = "https://image.tmdb.org/t/p/w500";
         string api_key = "c576ca5974295b2a0cc99a98e910425c";
         public Form _fr1;
@@ -119,23 +118,24 @@ namespace Progetto_API
 
                 // Crea un nuovo panel
                 Panel panel = new Panel();
-                panel.Name = "panel_generate_" + (x + i);
+                panel.Name = "panel_generate_" + (i);
                 panel.Size = new Size(panelWidth, panelHeight);
                 panel.Location = new Point(((this.Width-1355)/2) + (i % 5) * (panelWidth + 20), 280 + (i / 5) * (panelHeight + 20));
                 panel.BorderStyle = BorderStyle.FixedSingle;
 
                 // Aggiunge una label identificativa al panel
                 System.Windows.Forms.Label label = new System.Windows.Forms.Label();
-                label.Name = "label_number_generate_" + (x + 1);
+                label.Name = "label_number_generate_" + (i);
                 label.Text = (x + i).ToString();
                 label.Font = labelFont;
                 label.AutoSize = true;
                 label.Location = new Point(5, 5);
+                label.ForeColor = Color.FromArgb(0, 38, 64);
                 panel.Controls.Add(label);
 
                 // Aggiunge una picture box al panel
                 PictureBox pictureBox = new PictureBox();
-                pictureBox.Name = "picture_box_generate_" + (x + i);
+                pictureBox.Name = "picture_box_generate_" + (i);
                 pictureBox.Width = panelWidth - 10;
                 pictureBox.Height = panelHeight - 15 - label.Height - 35;
                 pictureBox.Location = new Point(5, label.Height + 10);
@@ -144,18 +144,23 @@ namespace Progetto_API
                 pictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
                 panel.Controls.Add(pictureBox);
 
+                // Aggiunge una label titolo al panel
                 System.Windows.Forms.Label titleLabel = new System.Windows.Forms.Label();
-                titleLabel.Name = "label_title_generate_" + (x + i);
+                titleLabel.Name = "label_title_generate_" + (i);
                 titleLabel.Text = Root_Series.results[i].name;
                 titleLabel.Font = new Font("Arial", 11, FontStyle.Bold);
-                titleLabel.AutoSize = true;
+                titleLabel.AutoSize = false;
+                titleLabel.Width= panelWidth - 10;
+                //titleLabel.Anchor = AnchorStyles.None;
                 titleLabel.Location = new Point(panel.Width / 2 - titleLabel.Width / 2, pictureBox.Bottom + 15);
                 titleLabel.MouseEnter += (sender, e) => { titleLabel.Font = new Font(titleLabel.Font, FontStyle.Underline | FontStyle.Bold); };
                 titleLabel.MouseLeave += (sender, e) => { titleLabel.Font = new Font(titleLabel.Font, FontStyle.Bold); };
                 
                 titleLabel.MouseClick += (sender, e) => 
                 { 
-                    MessageBox.Show("Hai cliccato su " + titleLabel.Name); 
+                    string n_serie = titleLabel.Name.Substring(21);
+                    FormDetails formDetails= new FormDetails(n_serie, Root_Series);
+                    formDetails.ShowDialog();
                 };
                 
                 titleLabel.ForeColor = Color.DarkBlue;
@@ -178,5 +183,23 @@ namespace Progetto_API
                 this.Controls.Add(panel);
             }
         }
+
+        private void Form2_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (e.CloseReason == CloseReason.UserClosing && _fr1.Visible != true)
+            {
+                DialogResult result = MessageBox.Show("Sei sicuro di voler chiudere l'applicazione?", "Conferma chiusura", MessageBoxButtons.YesNo);
+                if (result == DialogResult.No)
+                {
+                    e.Cancel = true; // Annulla la chiusura dell'applicazione
+                }
+                else
+                {
+                    _fr1.Close(); // Chiude l'applicazione
+                }
+            }
+        }
+
+
     }
 }

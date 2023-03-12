@@ -36,11 +36,11 @@
             this.comboBox_selected_language = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.numericUpDown_n_pagine = new System.Windows.Forms.NumericUpDown();
-            this.buttons_avvia_ric = new Progetto_API.Buttons();
             this.label_total_results = new System.Windows.Forms.Label();
             this.label_ris_trovati = new System.Windows.Forms.Label();
             this.label_total_pages = new System.Windows.Forms.Label();
             this.label_total_pages_result = new System.Windows.Forms.Label();
+            this.buttons_avvia_ric = new Progetto_API.Buttons();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_n_pagine)).BeginInit();
@@ -53,9 +53,8 @@
             this.panel_logo.Controls.Add(this.label_titolo);
             this.panel_logo.Controls.Add(this.pictureBox1);
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
-            this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(1560, 123);
+            this.panel_logo.Size = new System.Drawing.Size(1170, 100);
             this.panel_logo.TabIndex = 8;
             // 
             // label_titolo
@@ -65,10 +64,9 @@
             this.label_titolo.AutoSize = true;
             this.label_titolo.Font = new System.Drawing.Font("Arial", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_titolo.ForeColor = System.Drawing.Color.White;
-            this.label_titolo.Location = new System.Drawing.Point(31, 37);
-            this.label_titolo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_titolo.Location = new System.Drawing.Point(23, 30);
             this.label_titolo.Name = "label_titolo";
-            this.label_titolo.Size = new System.Drawing.Size(270, 51);
+            this.label_titolo.Size = new System.Drawing.Size(210, 41);
             this.label_titolo.TabIndex = 9;
             this.label_titolo.Text = "TOP RATED";
             // 
@@ -76,8 +74,7 @@
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Progetto_API.Properties.Resources.esss;
-            this.pictureBox1.Location = new System.Drawing.Point(1316, 34);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(987, 28);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(176, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -93,10 +90,9 @@
             this.label_torna_indietro.Font = new System.Drawing.Font("Arial Narrow", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_torna_indietro.ForeColor = System.Drawing.Color.White;
             this.label_torna_indietro.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.label_torna_indietro.Location = new System.Drawing.Point(13, 127);
-            this.label_torna_indietro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_torna_indietro.Location = new System.Drawing.Point(10, 103);
             this.label_torna_indietro.Name = "label_torna_indietro";
-            this.label_torna_indietro.Size = new System.Drawing.Size(85, 29);
+            this.label_torna_indietro.Size = new System.Drawing.Size(68, 23);
             this.label_torna_indietro.TabIndex = 9;
             this.label_torna_indietro.Text = "Indietro";
             this.label_torna_indietro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -110,9 +106,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(312, 148);
+            this.label3.Location = new System.Drawing.Point(234, 120);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(150, 19);
+            this.label3.Size = new System.Drawing.Size(129, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Seleziona la lingua:";
             // 
@@ -139,10 +136,10 @@
             "bn-BD (Bengalese, Bangladesh)",
             "ru-RU (Russo, Russia)",
             "tr-TR (Turco, Turchia)"});
-            this.comboBox_selected_language.Location = new System.Drawing.Point(316, 171);
-            this.comboBox_selected_language.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox_selected_language.Location = new System.Drawing.Point(237, 139);
+            this.comboBox_selected_language.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.comboBox_selected_language.Name = "comboBox_selected_language";
-            this.comboBox_selected_language.Size = new System.Drawing.Size(261, 27);
+            this.comboBox_selected_language.Size = new System.Drawing.Size(197, 24);
             this.comboBox_selected_language.TabIndex = 12;
             this.comboBox_selected_language.Text = "it-IT (Italiano, Italia)";
             // 
@@ -152,9 +149,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(679, 148);
+            this.label4.Location = new System.Drawing.Point(509, 120);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(249, 19);
+            this.label4.Size = new System.Drawing.Size(215, 16);
             this.label4.TabIndex = 13;
             this.label4.Text = "Seleziona il numero della pagina:";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -162,8 +160,8 @@
             // numericUpDown_n_pagine
             // 
             this.numericUpDown_n_pagine.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown_n_pagine.Location = new System.Drawing.Point(683, 172);
-            this.numericUpDown_n_pagine.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.numericUpDown_n_pagine.Location = new System.Drawing.Point(512, 140);
+            this.numericUpDown_n_pagine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.numericUpDown_n_pagine.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -175,7 +173,7 @@
             0,
             0});
             this.numericUpDown_n_pagine.Name = "numericUpDown_n_pagine";
-            this.numericUpDown_n_pagine.Size = new System.Drawing.Size(50, 27);
+            this.numericUpDown_n_pagine.Size = new System.Drawing.Size(50, 23);
             this.numericUpDown_n_pagine.TabIndex = 14;
             this.numericUpDown_n_pagine.Value = new decimal(new int[] {
             1,
@@ -183,33 +181,15 @@
             0,
             0});
             // 
-            // buttons_avvia_ric
-            // 
-            this.buttons_avvia_ric.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttons_avvia_ric.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttons_avvia_ric.FlatAppearance.BorderSize = 0;
-            this.buttons_avvia_ric.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttons_avvia_ric.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttons_avvia_ric.ForeColor = System.Drawing.Color.White;
-            this.buttons_avvia_ric.Location = new System.Drawing.Point(957, 148);
-            this.buttons_avvia_ric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttons_avvia_ric.Name = "buttons_avvia_ric";
-            this.buttons_avvia_ric.Size = new System.Drawing.Size(209, 70);
-            this.buttons_avvia_ric.TabIndex = 15;
-            this.buttons_avvia_ric.Text = "AVVIA RICERCA";
-            this.buttons_avvia_ric.UseVisualStyleBackColor = false;
-            this.buttons_avvia_ric.Click += new System.EventHandler(this.buttons1_Click);
-            // 
             // label_total_results
             // 
             this.label_total_results.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_total_results.AutoSize = true;
             this.label_total_results.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_total_results.Location = new System.Drawing.Point(1472, 231);
-            this.label_total_results.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_total_results.Location = new System.Drawing.Point(1081, 188);
             this.label_total_results.Name = "label_total_results";
-            this.label_total_results.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label_total_results.Size = new System.Drawing.Size(46, 23);
+            this.label_total_results.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label_total_results.Size = new System.Drawing.Size(37, 20);
             this.label_total_results.TabIndex = 16;
             this.label_total_results.Text = "7000";
             this.label_total_results.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -220,9 +200,10 @@
             this.label_ris_trovati.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_ris_trovati.AutoSize = true;
             this.label_ris_trovati.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_ris_trovati.Location = new System.Drawing.Point(1396, 210);
+            this.label_ris_trovati.Location = new System.Drawing.Point(1046, 171);
+            this.label_ris_trovati.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_ris_trovati.Name = "label_ris_trovati";
-            this.label_ris_trovati.Size = new System.Drawing.Size(133, 21);
+            this.label_ris_trovati.Size = new System.Drawing.Size(107, 17);
             this.label_ris_trovati.TabIndex = 18;
             this.label_ris_trovati.Text = "Risultati trovati:";
             this.label_ris_trovati.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -233,9 +214,10 @@
             this.label_total_pages.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_total_pages.AutoSize = true;
             this.label_total_pages.Font = new System.Drawing.Font("Arial", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_total_pages.Location = new System.Drawing.Point(1240, 210);
+            this.label_total_pages.Location = new System.Drawing.Point(930, 171);
+            this.label_total_pages.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label_total_pages.Name = "label_total_pages";
-            this.label_total_pages.Size = new System.Drawing.Size(131, 21);
+            this.label_total_pages.Size = new System.Drawing.Size(105, 17);
             this.label_total_pages.TabIndex = 20;
             this.label_total_pages.Text = "Pagine trovate:";
             this.label_total_pages.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -246,22 +228,38 @@
             this.label_total_pages_result.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label_total_pages_result.AutoSize = true;
             this.label_total_pages_result.Font = new System.Drawing.Font("Arial Narrow", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_total_pages_result.Location = new System.Drawing.Point(1316, 231);
-            this.label_total_pages_result.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label_total_pages_result.Location = new System.Drawing.Point(964, 188);
             this.label_total_pages_result.Name = "label_total_pages_result";
-            this.label_total_pages_result.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.label_total_pages_result.Size = new System.Drawing.Size(46, 23);
+            this.label_total_pages_result.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.label_total_pages_result.Size = new System.Drawing.Size(37, 20);
             this.label_total_pages_result.TabIndex = 19;
             this.label_total_pages_result.Text = "7000";
             this.label_total_pages_result.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_total_pages_result.Visible = false;
             // 
+            // buttons_avvia_ric
+            // 
+            this.buttons_avvia_ric.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttons_avvia_ric.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttons_avvia_ric.FlatAppearance.BorderSize = 0;
+            this.buttons_avvia_ric.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttons_avvia_ric.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttons_avvia_ric.ForeColor = System.Drawing.Color.White;
+            this.buttons_avvia_ric.Location = new System.Drawing.Point(756, 120);
+            this.buttons_avvia_ric.Margin = new System.Windows.Forms.Padding(2);
+            this.buttons_avvia_ric.Name = "buttons_avvia_ric";
+            this.buttons_avvia_ric.Size = new System.Drawing.Size(157, 57);
+            this.buttons_avvia_ric.TabIndex = 15;
+            this.buttons_avvia_ric.Text = "AVVIA RICERCA";
+            this.buttons_avvia_ric.UseVisualStyleBackColor = false;
+            this.buttons_avvia_ric.Click += new System.EventHandler(this.buttons1_Click);
+            // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1554, 684);
+            this.ClientSize = new System.Drawing.Size(1166, 556);
             this.Controls.Add(this.label_total_pages);
             this.Controls.Add(this.label_total_pages_result);
             this.Controls.Add(this.label_ris_trovati);
@@ -273,11 +271,11 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label_torna_indietro);
             this.Controls.Add(this.panel_logo);
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form2_FormClosing);
             this.Load += new System.EventHandler(this.Form2_Load);
             this.panel_logo.ResumeLayout(false);
             this.panel_logo.PerformLayout();

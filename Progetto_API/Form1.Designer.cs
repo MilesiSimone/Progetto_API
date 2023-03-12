@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.panel_logo = new System.Windows.Forms.Panel();
-            this.label_benv = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label_benv = new System.Windows.Forms.Label();
             this.buttons_delete_review = new Progetto_API.Buttons();
             this.buttons_add_review = new Progetto_API.Buttons();
             this.buttons_get_latest = new Progetto_API.Buttons();
@@ -51,19 +51,6 @@
             this.panel_logo.Size = new System.Drawing.Size(1104, 100);
             this.panel_logo.TabIndex = 7;
             // 
-            // label_benv
-            // 
-            this.label_benv.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label_benv.AutoSize = true;
-            this.label_benv.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_benv.ForeColor = System.Drawing.Color.Coral;
-            this.label_benv.Location = new System.Drawing.Point(486, 121);
-            this.label_benv.Name = "label_benv";
-            this.label_benv.Size = new System.Drawing.Size(129, 25);
-            this.label_benv.TabIndex = 8;
-            this.label_benv.Text = "BENVENUTO!!";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Progetto_API.Properties.Resources.esss;
@@ -73,6 +60,18 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            // 
+            // label_benv
+            // 
+            this.label_benv.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label_benv.AutoSize = true;
+            this.label_benv.Font = new System.Drawing.Font("Arial Narrow", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_benv.ForeColor = System.Drawing.Color.Coral;
+            this.label_benv.Location = new System.Drawing.Point(486, 121);
+            this.label_benv.Name = "label_benv";
+            this.label_benv.Size = new System.Drawing.Size(129, 25);
+            this.label_benv.TabIndex = 8;
+            this.label_benv.Text = "BENVENUTO!!";
             // 
             // buttons_delete_review
             // 
