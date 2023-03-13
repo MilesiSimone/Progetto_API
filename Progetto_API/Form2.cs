@@ -103,7 +103,7 @@ namespace Progetto_API
             {
                 if (textBox_id_series.Text != "")
                 {
-                    Root_Series = await GetSeriesAsync($"/{textBox_id_series}/similar?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
+                    Root_Series = await GetSeriesAsync($"/{textBox_id_series.Text}/similar?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
                 }
                 else
                 {
