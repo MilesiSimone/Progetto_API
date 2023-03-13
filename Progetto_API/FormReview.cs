@@ -49,6 +49,10 @@ namespace Progetto_API
                     label_value.Visible = true;
                     comboBox_valutazione.Visible = true;
                 }
+                if (scelta == "add")
+                {
+                    textBox_id_series.Text = "";
+                }
             }
             else
             {
@@ -59,7 +63,6 @@ namespace Progetto_API
             panel_logo.BackColor = Color.FromArgb(0, 38, 64);
             label_torna_indietro.ForeColor = Color.FromArgb(0, 38, 64);
             buttons_send.BackColor = Color.FromArgb(0, 38, 64);
-            label_titolo_series.Top = (pictureBox2.Height - label_titolo_series.Height) / 2;
 
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(

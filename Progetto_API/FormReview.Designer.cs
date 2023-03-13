@@ -180,7 +180,7 @@
             // 
             this.label_titolo_series.AutoSize = true;
             this.label_titolo_series.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.label_titolo_series.Location = new System.Drawing.Point(183, 534);
+            this.label_titolo_series.Location = new System.Drawing.Point(196, 545);
             this.label_titolo_series.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_titolo_series.Name = "label_titolo_series";
             this.label_titolo_series.Size = new System.Drawing.Size(61, 25);
