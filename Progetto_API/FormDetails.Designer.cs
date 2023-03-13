@@ -121,7 +121,7 @@
             // 
             this.label_overview.AutoSize = true;
             this.label_overview.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.label_overview.Location = new System.Drawing.Point(807, 650);
+            this.label_overview.Location = new System.Drawing.Point(807, 642);
             this.label_overview.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_overview.Name = "label_overview";
             this.label_overview.Size = new System.Drawing.Size(122, 32);
@@ -244,8 +244,8 @@
             // 
             // pictureBox_backdrop_image
             // 
-            this.pictureBox_backdrop_image.Location = new System.Drawing.Point(88, 686);
-            this.pictureBox_backdrop_image.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_backdrop_image.Location = new System.Drawing.Point(88, 675);
+            this.pictureBox_backdrop_image.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_backdrop_image.Name = "pictureBox_backdrop_image";
             this.pictureBox_backdrop_image.Size = new System.Drawing.Size(635, 266);
             this.pictureBox_backdrop_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -255,7 +255,7 @@
             // pictureBox_poster_path
             // 
             this.pictureBox_poster_path.Location = new System.Drawing.Point(112, 153);
-            this.pictureBox_poster_path.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox_poster_path.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox_poster_path.Name = "pictureBox_poster_path";
             this.pictureBox_poster_path.Size = new System.Drawing.Size(341, 481);
             this.pictureBox_poster_path.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -269,17 +269,17 @@
             this.panel_logo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.panel_logo.Controls.Add(this.pictureBox1);
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
-            this.panel_logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
             this.panel_logo.Name = "panel_logo";
-            this.panel_logo.Size = new System.Drawing.Size(1778, 116);
+            this.panel_logo.Size = new System.Drawing.Size(1578, 116);
             this.panel_logo.TabIndex = 19;
             // 
             // pictureBox1
             // 
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Progetto_API.Properties.Resources.esss;
-            this.pictureBox1.Location = new System.Drawing.Point(1392, 30);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Location = new System.Drawing.Point(1276, 30);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(176, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -313,13 +313,13 @@
             // 
             this.textBox_overview.Cursor = System.Windows.Forms.Cursors.Default;
             this.textBox_overview.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox_overview.Location = new System.Drawing.Point(813, 686);
-            this.textBox_overview.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_overview.Location = new System.Drawing.Point(813, 678);
+            this.textBox_overview.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_overview.Multiline = true;
             this.textBox_overview.Name = "textBox_overview";
             this.textBox_overview.ReadOnly = true;
             this.textBox_overview.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox_overview.Size = new System.Drawing.Size(796, 265);
+            this.textBox_overview.Size = new System.Drawing.Size(721, 265);
             this.textBox_overview.TabIndex = 22;
             this.textBox_overview.TabStop = false;
             // 
@@ -344,8 +344,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1696, 989);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1574, 974);
             this.Controls.Add(this.buttons_review);
             this.Controls.Add(this.textBox_overview);
             this.Controls.Add(this.label_language_result);
@@ -369,8 +369,7 @@
             this.Controls.Add(this.label_first_air_date);
             this.Controls.Add(this.label_title);
             this.Controls.Add(this.pictureBox_poster_path);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormDetails";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDetails";

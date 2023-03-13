@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -41,6 +42,7 @@ namespace Progetto_API
             label_vote_count.ForeColor = Color.FromArgb(0, 38, 64);
             label_genre_ids.ForeColor = Color.FromArgb(0, 38, 64);
             label_original_name.ForeColor = Color.FromArgb(0, 38, 64);
+            label_language_result.Text = label_language_result.Text.ToUpper();
             label_origin_country.ForeColor = Color.FromArgb(0, 38, 64);
             label_overview.ForeColor = Color.FromArgb(0, 38, 64);
             label_popularity.ForeColor = Color.FromArgb(0, 38, 64);
