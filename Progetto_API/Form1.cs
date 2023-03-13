@@ -62,5 +62,21 @@ namespace Progetto_API
             f2.Show();
             this.Hide();
         }
+
+        private void buttons_add_review_Click(object sender, EventArgs e)
+        {
+            string s = "add", a="", b="", c="";
+            FormReview f_r = new FormReview(s, a, b, c);
+            f_r.Show();
+            this.Hide();
+        }
+
+        private void buttons_delete_review_Click(object sender, EventArgs e)
+        {
+            string s = "delete", a = "", b = "", c = "";
+            FormReview f_r = new FormReview(s, a, b, c);
+            f_r.Show();
+            this.Hide();
+        }
     }
 }

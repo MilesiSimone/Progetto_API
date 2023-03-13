@@ -73,7 +73,6 @@ namespace Progetto_API
             if (response.IsSuccessStatusCode)
             {
                 Root_Series = await JsonSerializer.DeserializeAsync<Rootobject>(await response.Content.ReadAsStreamAsync());
-                //MessageBox.Show(Root_Series.results[0].name);
             }
             return Root_Series;
         }

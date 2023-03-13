@@ -98,6 +98,12 @@
     <Compile Include="FormDetails.Designer.cs">
       <DependentUpon>FormDetails.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReview.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReview.Designer.cs">
+      <DependentUpon>FormReview.cs</DependentUpon>
+    </Compile>
     <Compile Include="panel\panel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -115,6 +121,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormDetails.resx">
       <DependentUpon>FormDetails.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReview.resx">
+      <DependentUpon>FormReview.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

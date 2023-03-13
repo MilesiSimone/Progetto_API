@@ -69,7 +69,7 @@
             this.label_benv.ForeColor = System.Drawing.Color.Coral;
             this.label_benv.Location = new System.Drawing.Point(486, 121);
             this.label_benv.Name = "label_benv";
-            this.label_benv.Size = new System.Drawing.Size(129, 25);
+            this.label_benv.Size = new System.Drawing.Size(168, 31);
             this.label_benv.TabIndex = 8;
             this.label_benv.Text = "BENVENUTO!!";
             // 
@@ -92,6 +92,7 @@
             this.buttons_delete_review.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttons_delete_review.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttons_delete_review.UseVisualStyleBackColor = false;
+            this.buttons_delete_review.Click += new System.EventHandler(this.buttons_delete_review_Click);
             // 
             // buttons_add_review
             // 
@@ -112,6 +113,7 @@
             this.buttons_add_review.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.buttons_add_review.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttons_add_review.UseVisualStyleBackColor = false;
+            this.buttons_add_review.Click += new System.EventHandler(this.buttons_add_review_Click);
             // 
             // buttons_get_latest
             // 
@@ -198,7 +200,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1100, 647);

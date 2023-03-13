@@ -16,6 +16,8 @@ namespace Progetto_API
         int i = 0;
         string temp = "";
         string image_path = "https://image.tmdb.org/t/p/w500";
+        string id_series;
+        string full_path_image;
 
         public FormDetails(string n_serie, Rootobject Root_Series)
         {
@@ -36,6 +38,7 @@ namespace Progetto_API
             label_vote_count_result.Text = Root_Series.results[i].vote_count.ToString();
             pictureBox_poster_path.Load(image_path + Root_Series.results[i].poster_path);
             pictureBox_backdrop_image.Load(image_path + Root_Series.results[i].backdrop_path);
+            full_path_image = image_path + Root_Series.results[i].backdrop_path;
             textBox_overview.Text = Root_Series.results[i].overview;
             label_title.ForeColor= Color.FromArgb(0, 38, 64);
             label_first_air_date.ForeColor = Color.FromArgb(0, 38, 64);
@@ -50,11 +53,19 @@ namespace Progetto_API
             panel_logo.BackColor = Color.FromArgb(0, 38, 64);
             label_or_language.ForeColor = Color.FromArgb(0, 38, 64);
             buttons_review.BackColor = Color.FromArgb(0, 38, 64);
+            id_series = Root_Series.results[i].id.ToString();
         }
 
         private void FormDetails_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttons_review_Click(object sender, EventArgs e)
+        {
+            string s = "from_form_details";
+            FormReview formReview = new FormReview(s, id_series, full_path_image, label_title.Text);
+            formReview.Show();
         }
     }
 }

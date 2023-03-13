@@ -44,18 +44,18 @@
             this.label_popularity_result = new System.Windows.Forms.Label();
             this.label_vote_average_result = new System.Windows.Forms.Label();
             this.label_vote_count_result = new System.Windows.Forms.Label();
-            this.pictureBox_backdrop_image = new System.Windows.Forms.PictureBox();
-            this.pictureBox_poster_path = new System.Windows.Forms.PictureBox();
             this.panel_logo = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label_or_language = new System.Windows.Forms.Label();
             this.label_language_result = new System.Windows.Forms.Label();
             this.textBox_overview = new System.Windows.Forms.TextBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox_backdrop_image = new System.Windows.Forms.PictureBox();
+            this.pictureBox_poster_path = new System.Windows.Forms.PictureBox();
             this.buttons_review = new Progetto_API.Buttons();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_backdrop_image)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_poster_path)).BeginInit();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_backdrop_image)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_poster_path)).BeginInit();
             this.SuspendLayout();
             // 
             // label_title
@@ -242,26 +242,6 @@
             this.label_vote_count_result.TabIndex = 17;
             this.label_vote_count_result.Text = "15/03/2022";
             // 
-            // pictureBox_backdrop_image
-            // 
-            this.pictureBox_backdrop_image.Location = new System.Drawing.Point(88, 675);
-            this.pictureBox_backdrop_image.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox_backdrop_image.Name = "pictureBox_backdrop_image";
-            this.pictureBox_backdrop_image.Size = new System.Drawing.Size(635, 266);
-            this.pictureBox_backdrop_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_backdrop_image.TabIndex = 10;
-            this.pictureBox_backdrop_image.TabStop = false;
-            // 
-            // pictureBox_poster_path
-            // 
-            this.pictureBox_poster_path.Location = new System.Drawing.Point(112, 153);
-            this.pictureBox_poster_path.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox_poster_path.Name = "pictureBox_poster_path";
-            this.pictureBox_poster_path.Size = new System.Drawing.Size(341, 481);
-            this.pictureBox_poster_path.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox_poster_path.TabIndex = 0;
-            this.pictureBox_poster_path.TabStop = false;
-            // 
             // panel_logo
             // 
             this.panel_logo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -273,18 +253,6 @@
             this.panel_logo.Name = "panel_logo";
             this.panel_logo.Size = new System.Drawing.Size(1578, 116);
             this.panel_logo.TabIndex = 19;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::Progetto_API.Properties.Resources.esss;
-            this.pictureBox1.Location = new System.Drawing.Point(1276, 30);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(176, 45);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
             // 
             // label_or_language
             // 
@@ -323,6 +291,38 @@
             this.textBox_overview.TabIndex = 22;
             this.textBox_overview.TabStop = false;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::Progetto_API.Properties.Resources.esss;
+            this.pictureBox1.Location = new System.Drawing.Point(1276, 30);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(176, 45);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox_backdrop_image
+            // 
+            this.pictureBox_backdrop_image.Location = new System.Drawing.Point(88, 675);
+            this.pictureBox_backdrop_image.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox_backdrop_image.Name = "pictureBox_backdrop_image";
+            this.pictureBox_backdrop_image.Size = new System.Drawing.Size(635, 266);
+            this.pictureBox_backdrop_image.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_backdrop_image.TabIndex = 10;
+            this.pictureBox_backdrop_image.TabStop = false;
+            // 
+            // pictureBox_poster_path
+            // 
+            this.pictureBox_poster_path.Location = new System.Drawing.Point(112, 153);
+            this.pictureBox_poster_path.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox_poster_path.Name = "pictureBox_poster_path";
+            this.pictureBox_poster_path.Size = new System.Drawing.Size(341, 481);
+            this.pictureBox_poster_path.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox_poster_path.TabIndex = 0;
+            this.pictureBox_poster_path.TabStop = false;
+            // 
             // buttons_review
             // 
             this.buttons_review.BackColor = System.Drawing.Color.Blue;
@@ -338,6 +338,7 @@
             this.buttons_review.TabIndex = 23;
             this.buttons_review.Text = "ADD REVIEW";
             this.buttons_review.UseVisualStyleBackColor = false;
+            this.buttons_review.Click += new System.EventHandler(this.buttons_review_Click);
             // 
             // FormDetails
             // 
@@ -374,11 +375,11 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FormDetails";
             this.Load += new System.EventHandler(this.FormDetails_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_backdrop_image)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_poster_path)).EndInit();
             this.panel_logo.ResumeLayout(false);
             this.panel_logo.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_backdrop_image)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox_poster_path)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
