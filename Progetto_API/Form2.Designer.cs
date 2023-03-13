@@ -41,6 +41,8 @@
             this.label_total_pages = new System.Windows.Forms.Label();
             this.label_total_pages_result = new System.Windows.Forms.Label();
             this.buttons_avvia_ric = new Progetto_API.Buttons();
+            this.label_id_series = new System.Windows.Forms.Label();
+            this.textBox_id_series = new System.Windows.Forms.TextBox();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_n_pagine)).BeginInit();
@@ -106,7 +108,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(234, 120);
+            this.label3.Location = new System.Drawing.Point(281, 120);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(129, 16);
@@ -136,10 +138,10 @@
             "bn-BD (Bengalese, Bangladesh)",
             "ru-RU (Russo, Russia)",
             "tr-TR (Turco, Turchia)"});
-            this.comboBox_selected_language.Location = new System.Drawing.Point(237, 139);
-            this.comboBox_selected_language.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboBox_selected_language.Location = new System.Drawing.Point(284, 139);
+            this.comboBox_selected_language.Margin = new System.Windows.Forms.Padding(2);
             this.comboBox_selected_language.Name = "comboBox_selected_language";
-            this.comboBox_selected_language.Size = new System.Drawing.Size(197, 24);
+            this.comboBox_selected_language.Size = new System.Drawing.Size(201, 24);
             this.comboBox_selected_language.TabIndex = 12;
             this.comboBox_selected_language.Text = "it-IT (Italiano, Italia)";
             // 
@@ -149,7 +151,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(509, 120);
+            this.label4.Location = new System.Drawing.Point(513, 120);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(215, 16);
@@ -160,8 +162,8 @@
             // numericUpDown_n_pagine
             // 
             this.numericUpDown_n_pagine.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.numericUpDown_n_pagine.Location = new System.Drawing.Point(512, 140);
-            this.numericUpDown_n_pagine.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.numericUpDown_n_pagine.Location = new System.Drawing.Point(516, 138);
+            this.numericUpDown_n_pagine.Margin = new System.Windows.Forms.Padding(2);
             this.numericUpDown_n_pagine.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -173,7 +175,7 @@
             0,
             0});
             this.numericUpDown_n_pagine.Name = "numericUpDown_n_pagine";
-            this.numericUpDown_n_pagine.Size = new System.Drawing.Size(50, 23);
+            this.numericUpDown_n_pagine.Size = new System.Drawing.Size(80, 23);
             this.numericUpDown_n_pagine.TabIndex = 14;
             this.numericUpDown_n_pagine.Value = new decimal(new int[] {
             1,
@@ -254,12 +256,38 @@
             this.buttons_avvia_ric.UseVisualStyleBackColor = false;
             this.buttons_avvia_ric.Click += new System.EventHandler(this.buttons1_Click);
             // 
+            // label_id_series
+            // 
+            this.label_id_series.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label_id_series.AutoSize = true;
+            this.label_id_series.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_id_series.Location = new System.Drawing.Point(121, 120);
+            this.label_id_series.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label_id_series.Name = "label_id_series";
+            this.label_id_series.Size = new System.Drawing.Size(61, 16);
+            this.label_id_series.TabIndex = 21;
+            this.label_id_series.Text = "ID Serie:";
+            this.label_id_series.Visible = false;
+            // 
+            // textBox_id_series
+            // 
+            this.textBox_id_series.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_id_series.Location = new System.Drawing.Point(124, 139);
+            this.textBox_id_series.Name = "textBox_id_series";
+            this.textBox_id_series.Size = new System.Drawing.Size(126, 25);
+            this.textBox_id_series.TabIndex = 22;
+            this.textBox_id_series.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_id_series.Visible = false;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1166, 556);
+            this.Controls.Add(this.textBox_id_series);
+            this.Controls.Add(this.label_id_series);
             this.Controls.Add(this.label_total_pages);
             this.Controls.Add(this.label_total_pages_result);
             this.Controls.Add(this.label_ris_trovati);
@@ -301,5 +329,7 @@
         private System.Windows.Forms.Label label_ris_trovati;
         private System.Windows.Forms.Label label_total_pages;
         private System.Windows.Forms.Label label_total_pages_result;
+        private System.Windows.Forms.Label label_id_series;
+        private System.Windows.Forms.TextBox textBox_id_series;
     }
 }

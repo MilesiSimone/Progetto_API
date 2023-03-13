@@ -38,7 +38,7 @@ namespace Progetto_API
             label_vote_count_result.Text = Root_Series.results[i].vote_count.ToString();
             pictureBox_poster_path.Load(image_path + Root_Series.results[i].poster_path);
             pictureBox_backdrop_image.Load(image_path + Root_Series.results[i].backdrop_path);
-            full_path_image = image_path + Root_Series.results[i].backdrop_path;
+            full_path_image = image_path + Root_Series.results[i].poster_path;
             textBox_overview.Text = Root_Series.results[i].overview;
             label_title.ForeColor= Color.FromArgb(0, 38, 64);
             label_first_air_date.ForeColor = Color.FromArgb(0, 38, 64);
@@ -63,8 +63,9 @@ namespace Progetto_API
 
         private void buttons_review_Click(object sender, EventArgs e)
         {
-            string s = "from_form_details";
-            FormReview formReview = new FormReview(s, id_series, full_path_image, label_title.Text);
+            string s = "";
+            string d = "add";
+            FormReview formReview = new FormReview(s, id_series, full_path_image, label_title.Text, d);
             formReview.Show();
         }
     }

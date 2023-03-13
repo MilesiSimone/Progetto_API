@@ -33,7 +33,6 @@ namespace Progetto_API
             button_top_rated.BackColor = Color.FromArgb(0, 38, 64);
             button_get_popular.BackColor = Color.FromArgb(0, 38, 64);
             buttons_get_similar.BackColor = Color.FromArgb(0, 38, 64);
-            buttons_get_latest.BackColor = Color.FromArgb(0, 38, 64);
             buttons_add_review.BackColor = Color.FromArgb(0, 38, 64);
             buttons_delete_review.BackColor = Color.FromArgb(0, 38, 64);
             label_benv.ForeColor = Color.FromArgb(0, 38, 64);
@@ -48,7 +47,9 @@ namespace Progetto_API
 
         private void buttons2_Click(object sender, EventArgs e)
         {
-
+            Form2 f2 = new Form2(this, buttons_get_similar.Text);
+            f2.Show();
+            this.Hide();
         }
 
         private void panel_logo_Paint(object sender, PaintEventArgs e)
@@ -65,16 +66,16 @@ namespace Progetto_API
 
         private void buttons_add_review_Click(object sender, EventArgs e)
         {
-            string s = "add", a="", b="", c="";
-            FormReview f_r = new FormReview(s, a, b, c);
+            string s = "add", a="", b="", c="", d="";
+            FormReview f_r = new FormReview(s, a, b, c, d);
             f_r.Show();
             this.Hide();
         }
 
         private void buttons_delete_review_Click(object sender, EventArgs e)
         {
-            string s = "delete", a = "", b = "", c = "";
-            FormReview f_r = new FormReview(s, a, b, c);
+            string s = "delete", a = "", b = "", c = "", d="";
+            FormReview f_r = new FormReview(s, a, b, c, d);
             f_r.Show();
             this.Hide();
         }

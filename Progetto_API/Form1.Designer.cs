@@ -33,7 +33,6 @@
             this.label_benv = new System.Windows.Forms.Label();
             this.buttons_delete_review = new Progetto_API.Buttons();
             this.buttons_add_review = new Progetto_API.Buttons();
-            this.buttons_get_latest = new Progetto_API.Buttons();
             this.buttons_get_similar = new Progetto_API.Buttons();
             this.button_get_popular = new Progetto_API.Buttons();
             this.button_top_rated = new Progetto_API.Buttons();
@@ -69,7 +68,7 @@
             this.label_benv.ForeColor = System.Drawing.Color.Coral;
             this.label_benv.Location = new System.Drawing.Point(486, 121);
             this.label_benv.Name = "label_benv";
-            this.label_benv.Size = new System.Drawing.Size(168, 31);
+            this.label_benv.Size = new System.Drawing.Size(129, 25);
             this.label_benv.TabIndex = 8;
             this.label_benv.Text = "BENVENUTO!!";
             // 
@@ -83,7 +82,7 @@
             this.buttons_delete_review.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttons_delete_review.ForeColor = System.Drawing.Color.White;
             this.buttons_delete_review.Image = global::Progetto_API.Properties.Resources.icons8_delete_45;
-            this.buttons_delete_review.Location = new System.Drawing.Point(763, 420);
+            this.buttons_delete_review.Location = new System.Drawing.Point(589, 420);
             this.buttons_delete_review.Margin = new System.Windows.Forms.Padding(4);
             this.buttons_delete_review.Name = "buttons_delete_review";
             this.buttons_delete_review.Size = new System.Drawing.Size(290, 138);
@@ -104,7 +103,7 @@
             this.buttons_add_review.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttons_add_review.ForeColor = System.Drawing.Color.White;
             this.buttons_add_review.Image = global::Progetto_API.Properties.Resources.icons8_thumbs_up_down_50;
-            this.buttons_add_review.Location = new System.Drawing.Point(405, 420);
+            this.buttons_add_review.Location = new System.Drawing.Point(222, 420);
             this.buttons_add_review.Margin = new System.Windows.Forms.Padding(4);
             this.buttons_add_review.Name = "buttons_add_review";
             this.buttons_add_review.Size = new System.Drawing.Size(290, 138);
@@ -114,26 +113,6 @@
             this.buttons_add_review.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.buttons_add_review.UseVisualStyleBackColor = false;
             this.buttons_add_review.Click += new System.EventHandler(this.buttons_add_review_Click);
-            // 
-            // buttons_get_latest
-            // 
-            this.buttons_get_latest.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.buttons_get_latest.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttons_get_latest.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttons_get_latest.FlatAppearance.BorderSize = 0;
-            this.buttons_get_latest.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttons_get_latest.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttons_get_latest.ForeColor = System.Drawing.Color.White;
-            this.buttons_get_latest.Image = global::Progetto_API.Properties.Resources.icons8_tv_50;
-            this.buttons_get_latest.Location = new System.Drawing.Point(47, 420);
-            this.buttons_get_latest.Margin = new System.Windows.Forms.Padding(4);
-            this.buttons_get_latest.Name = "buttons_get_latest";
-            this.buttons_get_latest.Size = new System.Drawing.Size(290, 138);
-            this.buttons_get_latest.TabIndex = 4;
-            this.buttons_get_latest.Text = "GET LATEST";
-            this.buttons_get_latest.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.buttons_get_latest.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.buttons_get_latest.UseVisualStyleBackColor = false;
             // 
             // buttons_get_similar
             // 
@@ -200,7 +179,7 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 23F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1100, 647);
@@ -208,7 +187,6 @@
             this.Controls.Add(this.panel_logo);
             this.Controls.Add(this.buttons_delete_review);
             this.Controls.Add(this.buttons_add_review);
-            this.Controls.Add(this.buttons_get_latest);
             this.Controls.Add(this.buttons_get_similar);
             this.Controls.Add(this.button_get_popular);
             this.Controls.Add(this.button_top_rated);
@@ -233,7 +211,6 @@
         private Buttons buttons_get_similar;
         private Buttons buttons_delete_review;
         private Buttons buttons_add_review;
-        private Buttons buttons_get_latest;
         private System.Windows.Forms.Panel panel_logo;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label_benv;

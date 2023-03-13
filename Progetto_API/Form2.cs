@@ -40,10 +40,16 @@ namespace Progetto_API
             if(label_titolo.Text == "TOP RATED")
             {
                 client.BaseAddress = new Uri("https://api.themoviedb.org/3/tv/top_rated");
-                
-            }else if(label_titolo.Text == "GET POPULAR")
+            }
+            else if(label_titolo.Text == "GET POPULAR")
             {
                 client.BaseAddress = new Uri("https://api.themoviedb.org/3/tv/popular");
+            }
+            else if (label_titolo.Text == "GET SIMILAR")
+            {
+                label_id_series.Visible = true;
+                textBox_id_series.Visible = true;
+                client.BaseAddress = new Uri("https://api.themoviedb.org/3/tv");
             }
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(
@@ -89,13 +95,27 @@ namespace Progetto_API
 
         private async void buttons1_Click(object sender, EventArgs e)
         {
-            Root_Series = await GetSeriesAsync($"?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
+            if (label_titolo.Text != "GET SIMILAR")
+            {
+                Root_Series = await GetSeriesAsync($"?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
+            }
+            else if (label_titolo.Text == "GET SIMILAR")
+            {
+                if (textBox_id_series.Text != "")
+                {
+                    Root_Series = await GetSeriesAsync($"/{textBox_id_series}/similar?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
+                }
+                else
+                {
+                    MessageBox.Show("Inserire un id");
+                }
+            }
             label_total_results.Visible = true;
             label_ris_trovati.Visible = true;
             label_total_pages.Visible = true;
             label_total_pages_result.Visible = true;
             label_total_results.Text = Root_Series.total_results.ToString();
-            label_total_pages_result.Text=Root_Series.total_pages.ToString();
+            label_total_pages_result.Text = Root_Series.total_pages.ToString();
             ViewResult(numericUpDown_n_pagine.Value);
         }
 
