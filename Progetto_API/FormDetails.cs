@@ -47,6 +47,7 @@ namespace Progetto_API
             label_voto_average.ForeColor = Color.FromArgb(0, 38, 64);
             panel_logo.BackColor = Color.FromArgb(0, 38, 64);
             label_or_language.ForeColor = Color.FromArgb(0, 38, 64);
+            buttons_review.BackColor = Color.FromArgb(0, 38, 64);
         }
 
         private void FormDetails_Load(object sender, EventArgs e)

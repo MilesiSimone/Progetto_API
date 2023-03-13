@@ -73,6 +73,7 @@ namespace Progetto_API
             if (response.IsSuccessStatusCode)
             {
                 Root_Series = await JsonSerializer.DeserializeAsync<Rootobject>(await response.Content.ReadAsStreamAsync());
+                //MessageBox.Show(Root_Series.results[0].name);
             }
             return Root_Series;
         }
@@ -114,74 +115,87 @@ namespace Progetto_API
             int startValue = (a - 1) * 20;
             int x = startValue + 1;
 
-            for (int i = 0; i < Root_Series.results.Length; i++){
-
-                // Crea un nuovo panel
-                Panel panel = new Panel();
-                panel.Name = "panel_generate_" + (i);
-                panel.Size = new Size(panelWidth, panelHeight);
-                panel.Location = new Point(((this.Width-1355)/2) + (i % 5) * (panelWidth + 20), 280 + (i / 5) * (panelHeight + 20));
-                panel.BorderStyle = BorderStyle.FixedSingle;
-
-                // Aggiunge una label identificativa al panel
-                System.Windows.Forms.Label label = new System.Windows.Forms.Label();
-                label.Name = "label_number_generate_" + (i);
-                label.Text = (x + i).ToString();
-                label.Font = labelFont;
-                label.AutoSize = true;
-                label.Location = new Point(5, 5);
-                label.ForeColor = Color.FromArgb(0, 38, 64);
-                panel.Controls.Add(label);
-
-                // Aggiunge una picture box al panel
-                PictureBox pictureBox = new PictureBox();
-                pictureBox.Name = "picture_box_generate_" + (i);
-                pictureBox.Width = panelWidth - 10;
-                pictureBox.Height = panelHeight - 15 - label.Height - 35;
-                pictureBox.Location = new Point(5, label.Height + 10);
-                pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
-                pictureBox.Load(image_path + Root_Series.results[i].poster_path);
-                pictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-                panel.Controls.Add(pictureBox);
-
-                // Aggiunge una label titolo al panel
-                System.Windows.Forms.Label titleLabel = new System.Windows.Forms.Label();
-                titleLabel.Name = "label_title_generate_" + (i);
-                titleLabel.Text = Root_Series.results[i].name;
-                titleLabel.Font = new Font("Arial", 11, FontStyle.Bold);
-                titleLabel.AutoSize = false;
-                titleLabel.Width= panelWidth - 10;
-                //titleLabel.Anchor = AnchorStyles.None;
-                titleLabel.Location = new Point(panel.Width / 2 - titleLabel.Width / 2, pictureBox.Bottom + 15);
-                titleLabel.MouseEnter += (sender, e) => { titleLabel.Font = new Font(titleLabel.Font, FontStyle.Underline | FontStyle.Bold); };
-                titleLabel.MouseLeave += (sender, e) => { titleLabel.Font = new Font(titleLabel.Font, FontStyle.Bold); };
-                
-                titleLabel.MouseClick += (sender, e) => 
-                { 
-                    string n_serie = titleLabel.Name.Substring(21);
-                    FormDetails formDetails= new FormDetails(n_serie, Root_Series);
-                    formDetails.ShowDialog();
-                };
-                
-                titleLabel.ForeColor = Color.DarkBlue;
-                titleLabel.TextAlign = ContentAlignment.MiddleCenter;
-                titleLabel.ForeColor = Color.FromArgb(0, 38, 64);
-                titleLabel.Cursor = Cursors.Hand;
-
-                // Check if title label width exceeds panel width
-                if (titleLabel.Width > panel.Width)
+            if (this.Controls.ContainsKey("panel_generate_1") && this.Controls["panel_generate_1"].GetType() == typeof(Panel))
+            {
+                for (int i = 0; i < Root_Series.results.Length; i++)
                 {
-                    int lines = (int)Math.Ceiling(titleLabel.Width / (double)panel.Width);
-                    int lineHeight = titleLabel.Font.Height;
-                    titleLabel.Height = lines * lineHeight;
-                    titleLabel.Width = panel.Width;
-                    titleLabel.Location = new Point(panel.Width / 2 - titleLabel.Width / 2, pictureBox.Bottom + 15);
+                    string panelName = "panel_generate_" + i.ToString();
+                    Panel panel_delete = (Panel)this.Controls[panelName];
+                    panel_delete.Dispose();
                 }
-                panel.Controls.Add(titleLabel);
-
-                // Aggiunge il panel al form
-                this.Controls.Add(panel);
             }
+
+                for (int i = 0; i < Root_Series.results.Length; i++)
+                {
+
+                    // Crea un nuovo panel
+                    Panel panel = new Panel();
+                    panel.Name = "panel_generate_" + (i);
+                    panel.Size = new Size(panelWidth, panelHeight);
+                    panel.Location = new Point(((this.Width - 1355) / 2) + (i % 5) * (panelWidth + 20), 280 + (i / 5) * (panelHeight + 20));
+                    panel.BorderStyle = BorderStyle.FixedSingle;
+
+                    // Aggiunge una label identificativa al panel
+                    System.Windows.Forms.Label label = new System.Windows.Forms.Label();
+                    label.Name = "label_number_generate_" + (i);
+                    label.Text = (x + i).ToString();
+                    label.Font = labelFont;
+                    label.AutoSize = true;
+                    label.Location = new Point(5, 5);
+                    label.ForeColor = Color.FromArgb(0, 38, 64);
+                    panel.Controls.Add(label);
+
+                    // Aggiunge una picture box al panel
+                    PictureBox pictureBox = new PictureBox();
+                    pictureBox.Name = "picture_box_generate_" + (i);
+                    pictureBox.Width = panelWidth - 10;
+                    pictureBox.Height = panelHeight - 15 - label.Height - 35;
+                    pictureBox.Location = new Point(5, label.Height + 10);
+                    pictureBox.SizeMode = PictureBoxSizeMode.StretchImage;
+                    pictureBox.Load(image_path + Root_Series.results[i].poster_path);
+                    pictureBox.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+                    panel.Controls.Add(pictureBox);
+
+                    // Aggiunge una label titolo al panel
+                    System.Windows.Forms.Label titleLabel = new System.Windows.Forms.Label();
+                    titleLabel.Name = "label_title_generate_" + (i);
+                    titleLabel.Text = Root_Series.results[i].name;
+                    titleLabel.Font = new Font("Arial", 11, FontStyle.Bold);
+                    titleLabel.AutoSize = false;
+                    titleLabel.Width = panelWidth - 10;
+                    //titleLabel.Anchor = AnchorStyles.None;
+                    titleLabel.Location = new Point(panel.Width / 2 - titleLabel.Width / 2, pictureBox.Bottom + 15);
+                    titleLabel.MouseEnter += (sender, e) => { titleLabel.Font = new Font(titleLabel.Font, FontStyle.Underline | FontStyle.Bold); };
+                    titleLabel.MouseLeave += (sender, e) => { titleLabel.Font = new Font(titleLabel.Font, FontStyle.Bold); };
+
+                    titleLabel.MouseClick += (sender, e) =>
+                    {
+                        string n_serie = titleLabel.Name.Substring(21);
+                        FormDetails formDetails = new FormDetails(n_serie, Root_Series);
+                        formDetails.ShowDialog();
+                    };
+
+                    titleLabel.ForeColor = Color.DarkBlue;
+                    titleLabel.TextAlign = ContentAlignment.MiddleCenter;
+                    titleLabel.ForeColor = Color.FromArgb(0, 38, 64);
+                    titleLabel.Cursor = Cursors.Hand;
+
+                    // Check if title label width exceeds panel width
+                    if (titleLabel.Width > panel.Width)
+                    {
+                        int lines = (int)Math.Ceiling(titleLabel.Width / (double)panel.Width);
+                        int lineHeight = titleLabel.Font.Height;
+                        titleLabel.Height = lines * lineHeight;
+                        titleLabel.Width = panel.Width;
+                        titleLabel.Location = new Point(panel.Width / 2 - titleLabel.Width / 2, pictureBox.Bottom + 15);
+                    }
+                    panel.Controls.Add(titleLabel);
+
+                    // Aggiunge il panel al form
+                    this.Controls.Add(panel);
+                    panel.BringToFront();
+                    this.Refresh();
+                }
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
