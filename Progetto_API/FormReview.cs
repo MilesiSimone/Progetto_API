@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -92,14 +93,23 @@ namespace Progetto_API
 
         async void buttons_send_Click(object sender, EventArgs e)
         {
-            guest_session = await GetSessionGuestAsync();
-            //MessageBox.Show(guest_session.guest_session_id);
-            Body_Info body_Info = new Body_Info(decimal.Parse(comboBox_valutazione.Text));
-            var url = await CreateReviewAsync(body_Info);
-            MessageBox.Show("Eseguito con successo");
+            if (label_titolo.Text == "ADD REVIEW" && textBox_id_series.Text != "")
+            {
+                guest_session = await GetSessionGuestAsync();
+                //MessageBox.Show(guest_session.guest_session_id);
+                Body_Info body_Info = new Body_Info(decimal.Parse(comboBox_valutazione.Text));
+                var url = await CreateReviewAsync(body_Info);
+                MessageBox.Show("Richiesta eseguita con successo, status code: " + url);
+            }
+            else if (label_titolo.Text == "DELETE REVIEW" && textBox_id_series.Text != "")
+            {
+                guest_session = await GetSessionGuestAsync();
+                var url = await DeleteReviewAsync();
+                MessageBox.Show("Richiesta eseguita con successo, status code: " + url);
+            }
         }
 
-        private async Task<Uri> CreateReviewAsync(Body_Info value)
+        private async Task<HttpStatusCode> CreateReviewAsync(Body_Info value)
         {
             //MessageBox.Show(client.BaseAddress + textBox_id_series.Text + "/rating?api_key=" + api_key + "&guest_session=" + guest_session.guest_session_id);
             HttpResponseMessage response = await client.PostAsJsonAsync(client.BaseAddress + textBox_id_series.Text + "/rating?api_key=" + api_key + "&guest_session_id=" + guest_session.guest_session_id, value);
@@ -107,7 +117,7 @@ namespace Progetto_API
             //MessageBox.Show(decimal.Parse(comboBox_valutazione.Text).ToString());
             response.EnsureSuccessStatusCode();
 
-            return response.Headers.Location;
+            return response.StatusCode;
         }
 
         private void comboBox_valutazione_SelectedIndexChanged(object sender, EventArgs e)
@@ -124,6 +134,13 @@ namespace Progetto_API
                 guest_session = await JsonSerializer.DeserializeAsync<GuestSession>(await response.Content.ReadAsStreamAsync());
             }
             return guest_session;
+        }
+
+        private async Task<HttpStatusCode> DeleteReviewAsync()
+        {
+            HttpResponseMessage response = await client.DeleteAsync(
+                client.BaseAddress + textBox_id_series.Text + "/rating?api_key=" + api_key + "&guest_session_id=" + guest_session.guest_session_id);
+            return response.StatusCode;
         }
 
     }
