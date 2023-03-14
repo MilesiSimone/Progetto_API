@@ -98,25 +98,33 @@ namespace Progetto_API
             if (label_titolo.Text != "GET SIMILAR")
             {
                 Root_Series = await GetSeriesAsync($"?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
+                label_total_results.Visible = true;
+                label_ris_trovati.Visible = true;
+                label_total_pages.Visible = true;
+                label_total_pages_result.Visible = true;
+                label_total_results.Text = Root_Series.total_results.ToString();
+                label_total_pages_result.Text = Root_Series.total_pages.ToString();
+                ViewResult(numericUpDown_n_pagine.Value);
             }
             else if (label_titolo.Text == "GET SIMILAR")
             {
                 if (textBox_id_series.Text != "")
                 {
                     Root_Series = await GetSeriesAsync($"/{textBox_id_series.Text}/similar?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
+                    label_total_results.Visible = true;
+                    label_ris_trovati.Visible = true;
+                    label_total_pages.Visible = true;
+                    label_total_pages_result.Visible = true;
+                    label_total_results.Text = Root_Series.total_results.ToString();
+                    label_total_pages_result.Text = Root_Series.total_pages.ToString();
+                    ViewResult(numericUpDown_n_pagine.Value);
                 }
                 else
                 {
                     MessageBox.Show("Inserire un id");
                 }
             }
-            label_total_results.Visible = true;
-            label_ris_trovati.Visible = true;
-            label_total_pages.Visible = true;
-            label_total_pages_result.Visible = true;
-            label_total_results.Text = Root_Series.total_results.ToString();
-            label_total_pages_result.Text = Root_Series.total_pages.ToString();
-            ViewResult(numericUpDown_n_pagine.Value);
+           
         }
 
         private void label_torna_indietro_MouseLeave(object sender, EventArgs e)

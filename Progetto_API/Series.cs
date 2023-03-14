@@ -38,4 +38,14 @@ namespace Progetto_API
         public string expires_at { get; set; }
     }
 
+    public class Body_Info
+    {
+        public decimal value { get; set; }
+
+        public Body_Info(decimal value)
+        {
+            this.value = value;
+        }
+    }
+
 }

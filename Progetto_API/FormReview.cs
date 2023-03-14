@@ -93,18 +93,26 @@ namespace Progetto_API
         async void buttons_send_Click(object sender, EventArgs e)
         {
             guest_session = await GetSessionGuestAsync();
-            MessageBox.Show(guest_session.guest_session_id);
-            var url = await CreateReviewAsync();
+            //MessageBox.Show(guest_session.guest_session_id);
+            Body_Info body_Info = new Body_Info(decimal.Parse(comboBox_valutazione.Text));
+            var url = await CreateReviewAsync(body_Info);
             MessageBox.Show("Eseguito con successo");
         }
 
-        private async Task<Uri> CreateReviewAsync()
+        private async Task<Uri> CreateReviewAsync(Body_Info value)
         {
+            //MessageBox.Show(client.BaseAddress + textBox_id_series.Text + "/rating?api_key=" + api_key + "&guest_session=" + guest_session.guest_session_id);
+            HttpResponseMessage response = await client.PostAsJsonAsync(client.BaseAddress + textBox_id_series.Text + "/rating?api_key=" + api_key + "&guest_session_id=" + guest_session.guest_session_id, value);
 
-            HttpResponseMessage response = await client.PostAsJsonAsync(client.BaseAddress + textBox_id_series.Text + "/rating?api_key=" + api_key + "&guest_session=" + guest_session.guest_session_id, comboBox_valutazione.Text); 
+            //MessageBox.Show(decimal.Parse(comboBox_valutazione.Text).ToString());
             response.EnsureSuccessStatusCode();
 
             return response.Headers.Location;
+        }
+
+        private void comboBox_valutazione_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
 
         private async Task<GuestSession> GetSessionGuestAsync()

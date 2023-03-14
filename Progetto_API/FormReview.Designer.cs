@@ -66,7 +66,7 @@
             this.label_titolo.Location = new System.Drawing.Point(31, 37);
             this.label_titolo.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_titolo.Name = "label_titolo";
-            this.label_titolo.Size = new System.Drawing.Size(237, 41);
+            this.label_titolo.Size = new System.Drawing.Size(303, 51);
             this.label_titolo.TabIndex = 9;
             this.label_titolo.Text = "ADD REVIEW";
             // 
@@ -94,7 +94,7 @@
             this.label_torna_indietro.Location = new System.Drawing.Point(13, 127);
             this.label_torna_indietro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_torna_indietro.Name = "label_torna_indietro";
-            this.label_torna_indietro.Size = new System.Drawing.Size(68, 23);
+            this.label_torna_indietro.Size = new System.Drawing.Size(85, 29);
             this.label_torna_indietro.TabIndex = 10;
             this.label_torna_indietro.Text = "Indietro";
             this.label_torna_indietro.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -109,7 +109,7 @@
             this.label_id_series.Location = new System.Drawing.Point(564, 174);
             this.label_id_series.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_id_series.Name = "label_id_series";
-            this.label_id_series.Size = new System.Drawing.Size(92, 25);
+            this.label_id_series.Size = new System.Drawing.Size(115, 32);
             this.label_id_series.TabIndex = 11;
             this.label_id_series.Text = "ID Series:";
             // 
@@ -120,7 +120,7 @@
             this.label_value.Location = new System.Drawing.Point(564, 235);
             this.label_value.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_value.Name = "label_value";
-            this.label_value.Size = new System.Drawing.Size(117, 25);
+            this.label_value.Size = new System.Drawing.Size(146, 32);
             this.label_value.TabIndex = 12;
             this.label_value.Text = "Valutazione:";
             this.label_value.Visible = false;
@@ -130,7 +130,7 @@
             this.textBox_id_series.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox_id_series.Location = new System.Drawing.Point(676, 179);
             this.textBox_id_series.Name = "textBox_id_series";
-            this.textBox_id_series.Size = new System.Drawing.Size(100, 26);
+            this.textBox_id_series.Size = new System.Drawing.Size(100, 30);
             this.textBox_id_series.TabIndex = 13;
             this.textBox_id_series.Text = "1562";
             this.textBox_id_series.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -139,32 +139,33 @@
             // 
             this.comboBox_valutazione.FormattingEnabled = true;
             this.comboBox_valutazione.Items.AddRange(new object[] {
-            "0.5",
+            "0,5",
             "1",
-            "1.5",
+            "1,5",
             "2",
-            "2.5",
+            "2,5",
             "3",
-            "3.5",
+            "3,5",
             "4",
-            "4.5",
+            "4,5",
             "5",
-            "5.5",
+            "5,5",
             "6",
-            "6.5",
+            "6,5",
             "7",
-            "7.5",
+            "7,5",
             "8",
-            "8.5",
+            "8,5",
             "9",
-            "9.5",
+            "9,5",
             "10"});
             this.comboBox_valutazione.Location = new System.Drawing.Point(707, 239);
             this.comboBox_valutazione.MaxLength = 3;
             this.comboBox_valutazione.Name = "comboBox_valutazione";
-            this.comboBox_valutazione.Size = new System.Drawing.Size(113, 27);
+            this.comboBox_valutazione.Size = new System.Drawing.Size(113, 31);
             this.comboBox_valutazione.TabIndex = 0;
             this.comboBox_valutazione.Visible = false;
+            this.comboBox_valutazione.SelectedIndexChanged += new System.EventHandler(this.comboBox_valutazione_SelectedIndexChanged);
             // 
             // pictureBox2
             // 
@@ -183,7 +184,7 @@
             this.label_titolo_series.Location = new System.Drawing.Point(196, 545);
             this.label_titolo_series.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_titolo_series.Name = "label_titolo_series";
-            this.label_titolo_series.Size = new System.Drawing.Size(61, 25);
+            this.label_titolo_series.Size = new System.Drawing.Size(76, 32);
             this.label_titolo_series.TabIndex = 16;
             this.label_titolo_series.Text = "Titolo";
             this.label_titolo_series.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -207,7 +208,7 @@
             // 
             // FormReview
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 596);
             this.Controls.Add(this.buttons_send);
