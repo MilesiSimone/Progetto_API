@@ -39,6 +39,8 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.label_titolo_series = new System.Windows.Forms.Label();
             this.buttons_send = new Progetto_API.Buttons();
+            this.label_nota_1 = new System.Windows.Forms.Label();
+            this.label_nota_2 = new System.Windows.Forms.Label();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -181,7 +183,7 @@
             // 
             this.label_titolo_series.AutoSize = true;
             this.label_titolo_series.Font = new System.Drawing.Font("Segoe UI Semibold", 14F, System.Drawing.FontStyle.Bold);
-            this.label_titolo_series.Location = new System.Drawing.Point(196, 545);
+            this.label_titolo_series.Location = new System.Drawing.Point(108, 545);
             this.label_titolo_series.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label_titolo_series.Name = "label_titolo_series";
             this.label_titolo_series.Size = new System.Drawing.Size(76, 32);
@@ -206,11 +208,38 @@
             this.buttons_send.UseVisualStyleBackColor = false;
             this.buttons_send.Click += new System.EventHandler(this.buttons_send_Click);
             // 
+            // label_nota_1
+            // 
+            this.label_nota_1.AutoSize = true;
+            this.label_nota_1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_nota_1.Location = new System.Drawing.Point(589, 545);
+            this.label_nota_1.Name = "label_nota_1";
+            this.label_nota_1.Size = new System.Drawing.Size(424, 20);
+            this.label_nota_1.TabIndex = 18;
+            this.label_nota_1.Text = "*Nota: per aggiungere una valutazione o eliminarla, è consigliato";
+            this.label_nota_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_nota_1.Visible = false;
+            this.label_nota_1.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // label_nota_2
+            // 
+            this.label_nota_2.AutoSize = true;
+            this.label_nota_2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_nota_2.Location = new System.Drawing.Point(610, 565);
+            this.label_nota_2.Name = "label_nota_2";
+            this.label_nota_2.Size = new System.Drawing.Size(370, 20);
+            this.label_nota_2.TabIndex = 19;
+            this.label_nota_2.Text = " passare dalla Form2 (TopRated, GetPopular, GetSimilar)";
+            this.label_nota_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_nota_2.Visible = false;
+            // 
             // FormReview
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 23F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1036, 596);
+            this.Controls.Add(this.label_nota_2);
+            this.Controls.Add(this.label_nota_1);
             this.Controls.Add(this.buttons_send);
             this.Controls.Add(this.label_titolo_series);
             this.Controls.Add(this.pictureBox2);
@@ -249,5 +278,7 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label label_titolo_series;
         private Buttons buttons_send;
+        private System.Windows.Forms.Label label_nota_1;
+        private System.Windows.Forms.Label label_nota_2;
     }
 }

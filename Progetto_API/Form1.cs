@@ -69,15 +69,14 @@ namespace Progetto_API
             string s = "add", a="", b="", c="", d="";
             FormReview f_r = new FormReview(s, a, b, c, d);
             f_r.Show();
-            this.Hide();
         }
 
         private void buttons_delete_review_Click(object sender, EventArgs e)
         {
-            string s = "delete", a = "", b = "", c = "", d="";
+            string s = "delete", a = "", b = "", c = "", d = "";
             FormReview f_r = new FormReview(s, a, b, c, d);
             f_r.Show();
-            this.Hide();
         }
     }
-}
+    }
+

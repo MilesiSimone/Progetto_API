@@ -31,7 +31,7 @@ namespace Progetto_API
         {
             InitializeComponent();
             client = new HttpClient();
-            //_fr1 = f1;
+            client.BaseAddress = new Uri("https://api.themoviedb.org/3/tv/");
             scelta = s;
             scelta1 = d;
             if (scelta == "add" || scelta1 == "add")
@@ -39,11 +39,12 @@ namespace Progetto_API
                 label_titolo.Text = "ADD REVIEW";
                 label_value.Visible = true;
                 comboBox_valutazione.Visible = true;
-                client.BaseAddress = new Uri("https://api.themoviedb.org/3/tv/");
+                
                 if (scelta1 == "add")
                 {
                     label_titolo_series.Text = c;
                     label_titolo_series.Visible = true;
+                    label_titolo_series.Location = new Point(pictureBox2.Left + pictureBox2.Width / 2 - label_titolo_series.Width / 2, label_titolo_series.Top);
                     pictureBox2.Load(b);
                     pictureBox2.Visible = true;
                     textBox_id_series.Text = a;
@@ -53,14 +54,19 @@ namespace Progetto_API
                 if (scelta == "add")
                 {
                     textBox_id_series.Text = "";
+                    //label_id_series.Location = new Point(this.Width / 2)
+                    label_nota_1.Visible = true;
+                    label_nota_2.Visible = true;
                 }
             }
             else
             {
                 label_titolo.Text = "DELETE REVIEW";
-                client.BaseAddress = new Uri("https://api.themoviedb.org/3/tv/");
+                textBox_id_series.Text = "";
+                label_nota_1.Visible = true;
+                label_nota_2.Visible = true;
             }
-            
+
             panel_logo.BackColor = Color.FromArgb(0, 38, 64);
             label_torna_indietro.ForeColor = Color.FromArgb(0, 38, 64);
             buttons_send.BackColor = Color.FromArgb(0, 38, 64);
@@ -100,12 +106,14 @@ namespace Progetto_API
                 Body_Info body_Info = new Body_Info(decimal.Parse(comboBox_valutazione.Text));
                 var url = await CreateReviewAsync(body_Info);
                 MessageBox.Show("Richiesta eseguita con successo, status code: " + url);
+                this.Close();
             }
             else if (label_titolo.Text == "DELETE REVIEW" && textBox_id_series.Text != "")
             {
                 guest_session = await GetSessionGuestAsync();
                 var url = await DeleteReviewAsync();
                 MessageBox.Show("Richiesta eseguita con successo, status code: " + url);
+                this.Close();
             }
         }
 
@@ -134,6 +142,11 @@ namespace Progetto_API
                 guest_session = await JsonSerializer.DeserializeAsync<GuestSession>(await response.Content.ReadAsStreamAsync());
             }
             return guest_session;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private async Task<HttpStatusCode> DeleteReviewAsync()
