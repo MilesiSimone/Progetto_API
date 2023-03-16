@@ -9,6 +9,7 @@ using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
 using System.Reflection.Emit;
+using System.Security.Policy;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
@@ -54,17 +55,29 @@ namespace Progetto_API
                 if (scelta == "add")
                 {
                     textBox_id_series.Text = "";
-                    //label_id_series.Location = new Point(this.Width / 2)
                     label_nota_1.Visible = true;
                     label_nota_2.Visible = true;
+                    this.ActiveControl = textBox_id_series;
                 }
             }
             else
             {
                 label_titolo.Text = "DELETE REVIEW";
-                textBox_id_series.Text = "";
-                label_nota_1.Visible = true;
-                label_nota_2.Visible = true;
+                if (scelta1 == "delete")
+                {
+                    label_titolo_series.Text = c;
+                    label_titolo_series.Visible = true;
+                    label_titolo_series.Location = new Point(pictureBox2.Left + pictureBox2.Width / 2 - label_titolo_series.Width / 2, label_titolo_series.Top);
+                    pictureBox2.Load(b);
+                    pictureBox2.Visible = true;
+                    textBox_id_series.Text = a;
+                }
+                else
+                {
+                    textBox_id_series.Text = "";
+                    label_nota_1.Visible = true;
+                    label_nota_2.Visible = true;
+                }
             }
 
             panel_logo.BackColor = Color.FromArgb(0, 38, 64);
@@ -83,7 +96,6 @@ namespace Progetto_API
 
         private void label_torna_indietro_Click(object sender, EventArgs e)
         {
-            //_fr1.Visible = true;
             this.Close();
         }
 
@@ -99,32 +111,41 @@ namespace Progetto_API
 
         async void buttons_send_Click(object sender, EventArgs e)
         {
-            if (label_titolo.Text == "ADD REVIEW" && textBox_id_series.Text != "")
+            if (label_titolo.Text == "ADD REVIEW" && textBox_id_series.Text != "" && comboBox_valutazione.Text != "")
             {
-                guest_session = await GetSessionGuestAsync();
-                //MessageBox.Show(guest_session.guest_session_id);
-                Body_Info body_Info = new Body_Info(decimal.Parse(comboBox_valutazione.Text));
-                var url = await CreateReviewAsync(body_Info);
-                MessageBox.Show("Richiesta eseguita con successo, status code: " + url);
+                try
+                {
+                    guest_session = await GetSessionGuestAsync();
+                    Body_Info body_Info = new Body_Info(decimal.Parse(comboBox_valutazione.Text));
+                    var url = await CreateReviewAsync(body_Info);
+                    MessageBox.Show("Richiesta eseguita con successo, status code: " + url);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("C'è stato un errore nella richiesta, eccezione: " + ex.Message);
+                }
                 this.Close();
             }
             else if (label_titolo.Text == "DELETE REVIEW" && textBox_id_series.Text != "")
             {
-                guest_session = await GetSessionGuestAsync();
-                var url = await DeleteReviewAsync();
-                MessageBox.Show("Richiesta eseguita con successo, status code: " + url);
+                try
+                {
+                    guest_session = await GetSessionGuestAsync();
+                    var url = await DeleteReviewAsync();
+                    MessageBox.Show("Richiesta eseguita con successo, status code: " + url);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("C'è stato un errore nella richiesta, eccezione: " + ex.Message);
+                }
                 this.Close();
             }
         }
 
         private async Task<HttpStatusCode> CreateReviewAsync(Body_Info value)
         {
-            //MessageBox.Show(client.BaseAddress + textBox_id_series.Text + "/rating?api_key=" + api_key + "&guest_session=" + guest_session.guest_session_id);
             HttpResponseMessage response = await client.PostAsJsonAsync(client.BaseAddress + textBox_id_series.Text + "/rating?api_key=" + api_key + "&guest_session_id=" + guest_session.guest_session_id, value);
-
-            //MessageBox.Show(decimal.Parse(comboBox_valutazione.Text).ToString());
             response.EnsureSuccessStatusCode();
-
             return response.StatusCode;
         }
 
@@ -147,6 +168,14 @@ namespace Progetto_API
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBox_id_series_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
         }
 
         private async Task<HttpStatusCode> DeleteReviewAsync()

@@ -134,11 +134,13 @@
             this.textBox_id_series.Name = "textBox_id_series";
             this.textBox_id_series.Size = new System.Drawing.Size(100, 30);
             this.textBox_id_series.TabIndex = 13;
-            this.textBox_id_series.Text = "1562";
+            this.textBox_id_series.Text = "1547";
             this.textBox_id_series.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_id_series.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_id_series_KeyPress);
             // 
             // comboBox_valutazione
             // 
+            this.comboBox_valutazione.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox_valutazione.FormattingEnabled = true;
             this.comboBox_valutazione.Items.AddRange(new object[] {
             "0,5",

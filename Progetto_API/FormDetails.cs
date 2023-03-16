@@ -54,6 +54,7 @@ namespace Progetto_API
             label_or_language.ForeColor = Color.FromArgb(0, 38, 64);
             buttons_review.BackColor = Color.FromArgb(0, 38, 64);
             id_series = Root_Series.results[i].id.ToString();
+            buttons_delete_review.BackColor = Color.FromArgb(0, 38, 64);
         }
 
         private void FormDetails_Load(object sender, EventArgs e)
@@ -65,6 +66,14 @@ namespace Progetto_API
         {
             string s = "";
             string d = "add";
+            FormReview formReview = new FormReview(s, id_series, full_path_image, label_title.Text, d);
+            formReview.Show();
+        }
+
+        private void buttons_delete_review_Click(object sender, EventArgs e)
+        {
+            string s = "";
+            string d = "delete";
             FormReview formReview = new FormReview(s, id_series, full_path_image, label_title.Text, d);
             formReview.Show();
         }

@@ -14,6 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Xml.Linq;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.ProgressBar;
 
 namespace Progetto_API
@@ -97,20 +98,9 @@ namespace Progetto_API
         {
             if (label_titolo.Text != "GET SIMILAR")
             {
-                Root_Series = await GetSeriesAsync($"?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
-                label_total_results.Visible = true;
-                label_ris_trovati.Visible = true;
-                label_total_pages.Visible = true;
-                label_total_pages_result.Visible = true;
-                label_total_results.Text = Root_Series.total_results.ToString();
-                label_total_pages_result.Text = Root_Series.total_pages.ToString();
-                ViewResult(numericUpDown_n_pagine.Value);
-            }
-            else if (label_titolo.Text == "GET SIMILAR")
-            {
-                if (textBox_id_series.Text != "")
+                try
                 {
-                    Root_Series = await GetSeriesAsync($"/{textBox_id_series.Text}/similar?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
+                    Root_Series = await GetSeriesAsync($"?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
                     label_total_results.Visible = true;
                     label_ris_trovati.Visible = true;
                     label_total_pages.Visible = true;
@@ -118,6 +108,31 @@ namespace Progetto_API
                     label_total_results.Text = Root_Series.total_results.ToString();
                     label_total_pages_result.Text = Root_Series.total_pages.ToString();
                     ViewResult(numericUpDown_n_pagine.Value);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("C'è stato un errore nella richiesta, eccezione: " + ex.Message);
+                }
+            }
+            else if (label_titolo.Text == "GET SIMILAR")
+            {
+                if (textBox_id_series.Text != "")
+                {
+                    try
+                    {
+                        Root_Series = await GetSeriesAsync($"/{textBox_id_series.Text}/similar?api_key={api_key}&language={comboBox_selected_language.Text.Substring(0, 5)}&page={numericUpDown_n_pagine.Value}");
+                        label_total_results.Visible = true;
+                        label_ris_trovati.Visible = true;
+                        label_total_pages.Visible = true;
+                        label_total_pages_result.Visible = true;
+                        label_total_results.Text = Root_Series.total_results.ToString();
+                        label_total_pages_result.Text = Root_Series.total_pages.ToString();
+                        ViewResult(numericUpDown_n_pagine.Value);
+                    }
+                    catch(Exception ex)
+                    {
+                        MessageBox.Show("C'è stato un errore nella richiesta, eccezione: " + ex.Message);
+                    }
                 }
                 else
                 {
@@ -232,15 +247,34 @@ namespace Progetto_API
                 DialogResult result = MessageBox.Show("Sei sicuro di voler chiudere l'applicazione?", "Conferma chiusura", MessageBoxButtons.YesNo);
                 if (result == DialogResult.No)
                 {
-                    e.Cancel = true; // Annulla la chiusura dell'applicazione
+                    e.Cancel = true; 
                 }
                 else
                 {
-                    _fr1.Close(); // Chiude l'applicazione
+                    _fr1.Close(); 
                 }
             }
         }
 
-
+        private void textBox_id_series_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar))
+            {
+                if (e.KeyChar != (char)Keys.Back)
+                {
+                    e.Handled = true;
+                }
+                return;
+            }
+            string text = textBox_id_series.Text;
+            text += e.KeyChar;
+            if (int.TryParse(text, out int value) && value >= 1)
+            {
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
     }
 }
