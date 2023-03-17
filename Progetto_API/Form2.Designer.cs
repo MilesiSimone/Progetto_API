@@ -40,10 +40,18 @@
             this.label_ris_trovati = new System.Windows.Forms.Label();
             this.label_total_pages = new System.Windows.Forms.Label();
             this.label_total_pages_result = new System.Windows.Forms.Label();
-            this.buttons_avvia_ric = new Progetto_API.Buttons();
             this.label_id_series = new System.Windows.Forms.Label();
             this.textBox_id_series = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label_pag_0 = new System.Windows.Forms.Label();
+            this.label_pag_1 = new System.Windows.Forms.Label();
+            this.label_pag_2 = new System.Windows.Forms.Label();
+            this.label_pag_3 = new System.Windows.Forms.Label();
+            this.label_pag_4 = new System.Windows.Forms.Label();
+            this.label_pag_5 = new System.Windows.Forms.Label();
+            this.label_pag_puntini = new System.Windows.Forms.Label();
+            this.label_pag_tot = new System.Windows.Forms.Label();
+            this.label_pag_6 = new System.Windows.Forms.Label();
+            this.buttons_avvia_ric = new Progetto_API.Buttons();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_n_pagine)).BeginInit();
@@ -178,7 +186,7 @@
             0,
             0});
             this.numericUpDown_n_pagine.Name = "numericUpDown_n_pagine";
-            this.numericUpDown_n_pagine.Size = new System.Drawing.Size(35, 27);
+            this.numericUpDown_n_pagine.Size = new System.Drawing.Size(79, 27);
             this.numericUpDown_n_pagine.TabIndex = 14;
             this.numericUpDown_n_pagine.Value = new decimal(new int[] {
             1,
@@ -242,23 +250,6 @@
             this.label_total_pages_result.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label_total_pages_result.Visible = false;
             // 
-            // buttons_avvia_ric
-            // 
-            this.buttons_avvia_ric.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.buttons_avvia_ric.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.buttons_avvia_ric.FlatAppearance.BorderSize = 0;
-            this.buttons_avvia_ric.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.buttons_avvia_ric.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttons_avvia_ric.ForeColor = System.Drawing.Color.White;
-            this.buttons_avvia_ric.Location = new System.Drawing.Point(1008, 148);
-            this.buttons_avvia_ric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.buttons_avvia_ric.Name = "buttons_avvia_ric";
-            this.buttons_avvia_ric.Size = new System.Drawing.Size(209, 70);
-            this.buttons_avvia_ric.TabIndex = 15;
-            this.buttons_avvia_ric.Text = "AVVIA RICERCA";
-            this.buttons_avvia_ric.UseVisualStyleBackColor = false;
-            this.buttons_avvia_ric.Click += new System.EventHandler(this.buttons1_Click);
-            // 
             // label_id_series
             // 
             this.label_id_series.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -284,16 +275,138 @@
             this.textBox_id_series.Visible = false;
             this.textBox_id_series.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_id_series_KeyPress);
             // 
-            // label1
+            // label_pag_0
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(628, 395);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(69, 30);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "1000";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_pag_0.AutoSize = true;
+            this.label_pag_0.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pag_0.Location = new System.Drawing.Point(508, 582);
+            this.label_pag_0.Name = "label_pag_0";
+            this.label_pag_0.Size = new System.Drawing.Size(55, 30);
+            this.label_pag_0.TabIndex = 23;
+            this.label_pag_0.Text = "100";
+            this.label_pag_0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_pag_0.Visible = false;
+            this.label_pag_0.Click += new System.EventHandler(this.label_pag_Click);
+            // 
+            // label_pag_1
+            // 
+            this.label_pag_1.AutoSize = true;
+            this.label_pag_1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pag_1.Location = new System.Drawing.Point(569, 582);
+            this.label_pag_1.Name = "label_pag_1";
+            this.label_pag_1.Size = new System.Drawing.Size(55, 30);
+            this.label_pag_1.TabIndex = 24;
+            this.label_pag_1.Text = "100";
+            this.label_pag_1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_pag_1.Visible = false;
+            this.label_pag_1.Click += new System.EventHandler(this.label_pag_Click);
+            // 
+            // label_pag_2
+            // 
+            this.label_pag_2.AutoSize = true;
+            this.label_pag_2.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pag_2.Location = new System.Drawing.Point(630, 582);
+            this.label_pag_2.Name = "label_pag_2";
+            this.label_pag_2.Size = new System.Drawing.Size(55, 30);
+            this.label_pag_2.TabIndex = 25;
+            this.label_pag_2.Text = "100";
+            this.label_pag_2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_pag_2.Visible = false;
+            this.label_pag_2.Click += new System.EventHandler(this.label_pag_Click);
+            // 
+            // label_pag_3
+            // 
+            this.label_pag_3.AutoSize = true;
+            this.label_pag_3.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pag_3.Location = new System.Drawing.Point(691, 582);
+            this.label_pag_3.Name = "label_pag_3";
+            this.label_pag_3.Size = new System.Drawing.Size(55, 30);
+            this.label_pag_3.TabIndex = 26;
+            this.label_pag_3.Text = "100";
+            this.label_pag_3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_pag_3.Visible = false;
+            this.label_pag_3.Click += new System.EventHandler(this.label_pag_Click);
+            // 
+            // label_pag_4
+            // 
+            this.label_pag_4.AutoSize = true;
+            this.label_pag_4.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pag_4.Location = new System.Drawing.Point(752, 582);
+            this.label_pag_4.Name = "label_pag_4";
+            this.label_pag_4.Size = new System.Drawing.Size(55, 30);
+            this.label_pag_4.TabIndex = 27;
+            this.label_pag_4.Text = "100";
+            this.label_pag_4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_pag_4.Visible = false;
+            this.label_pag_4.Click += new System.EventHandler(this.label_pag_Click);
+            // 
+            // label_pag_5
+            // 
+            this.label_pag_5.AutoSize = true;
+            this.label_pag_5.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pag_5.Location = new System.Drawing.Point(813, 582);
+            this.label_pag_5.Name = "label_pag_5";
+            this.label_pag_5.Size = new System.Drawing.Size(55, 30);
+            this.label_pag_5.TabIndex = 28;
+            this.label_pag_5.Text = "100";
+            this.label_pag_5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_pag_5.Visible = false;
+            this.label_pag_5.Click += new System.EventHandler(this.label_pag_Click);
+            // 
+            // label_pag_puntini
+            // 
+            this.label_pag_puntini.AutoSize = true;
+            this.label_pag_puntini.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pag_puntini.Location = new System.Drawing.Point(935, 582);
+            this.label_pag_puntini.Name = "label_pag_puntini";
+            this.label_pag_puntini.Size = new System.Drawing.Size(34, 30);
+            this.label_pag_puntini.TabIndex = 29;
+            this.label_pag_puntini.Text = "...";
+            this.label_pag_puntini.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_pag_puntini.Visible = false;
+            // 
+            // label_pag_tot
+            // 
+            this.label_pag_tot.AutoSize = true;
+            this.label_pag_tot.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pag_tot.Location = new System.Drawing.Point(975, 582);
+            this.label_pag_tot.Name = "label_pag_tot";
+            this.label_pag_tot.Size = new System.Drawing.Size(55, 30);
+            this.label_pag_tot.TabIndex = 30;
+            this.label_pag_tot.Text = "190";
+            this.label_pag_tot.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_pag_tot.Visible = false;
+            this.label_pag_tot.Click += new System.EventHandler(this.label_pag_Click);
+            // 
+            // label_pag_6
+            // 
+            this.label_pag_6.AutoSize = true;
+            this.label_pag_6.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_pag_6.Location = new System.Drawing.Point(874, 582);
+            this.label_pag_6.Name = "label_pag_6";
+            this.label_pag_6.Size = new System.Drawing.Size(55, 30);
+            this.label_pag_6.TabIndex = 31;
+            this.label_pag_6.Text = "100";
+            this.label_pag_6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label_pag_6.Visible = false;
+            this.label_pag_6.Click += new System.EventHandler(this.label_pag_Click);
+            // 
+            // buttons_avvia_ric
+            // 
+            this.buttons_avvia_ric.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.buttons_avvia_ric.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttons_avvia_ric.FlatAppearance.BorderSize = 0;
+            this.buttons_avvia_ric.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttons_avvia_ric.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttons_avvia_ric.ForeColor = System.Drawing.Color.White;
+            this.buttons_avvia_ric.Location = new System.Drawing.Point(1008, 148);
+            this.buttons_avvia_ric.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttons_avvia_ric.Name = "buttons_avvia_ric";
+            this.buttons_avvia_ric.Size = new System.Drawing.Size(209, 70);
+            this.buttons_avvia_ric.TabIndex = 15;
+            this.buttons_avvia_ric.Text = "AVVIA RICERCA";
+            this.buttons_avvia_ric.UseVisualStyleBackColor = false;
+            this.buttons_avvia_ric.Click += new System.EventHandler(this.buttons1_Click);
             // 
             // Form2
             // 
@@ -301,7 +414,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1555, 684);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.label_pag_6);
+            this.Controls.Add(this.label_pag_tot);
+            this.Controls.Add(this.label_pag_puntini);
+            this.Controls.Add(this.label_pag_5);
+            this.Controls.Add(this.label_pag_4);
+            this.Controls.Add(this.label_pag_3);
+            this.Controls.Add(this.label_pag_2);
+            this.Controls.Add(this.label_pag_1);
+            this.Controls.Add(this.label_pag_0);
             this.Controls.Add(this.textBox_id_series);
             this.Controls.Add(this.label_id_series);
             this.Controls.Add(this.label_total_pages);
@@ -348,6 +469,14 @@
         private System.Windows.Forms.Label label_total_pages_result;
         private System.Windows.Forms.Label label_id_series;
         private System.Windows.Forms.TextBox textBox_id_series;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label_pag_0;
+        private System.Windows.Forms.Label label_pag_1;
+        private System.Windows.Forms.Label label_pag_2;
+        private System.Windows.Forms.Label label_pag_3;
+        private System.Windows.Forms.Label label_pag_4;
+        private System.Windows.Forms.Label label_pag_5;
+        private System.Windows.Forms.Label label_pag_puntini;
+        private System.Windows.Forms.Label label_pag_tot;
+        private System.Windows.Forms.Label label_pag_6;
     }
 }

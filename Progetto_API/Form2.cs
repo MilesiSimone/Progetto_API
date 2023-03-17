@@ -109,6 +109,7 @@ namespace Progetto_API
                     label_total_results.Text = Root_Series.total_results.ToString();
                     label_total_pages_result.Text = Root_Series.total_pages.ToString();
                     ViewResult(numericUpDown_n_pagine.Value);
+                    ViewPag();
                 }
                 catch (Exception ex)
                 {
@@ -129,6 +130,7 @@ namespace Progetto_API
                         label_total_results.Text = Root_Series.total_results.ToString();
                         label_total_pages_result.Text = Root_Series.total_pages.ToString();
                         ViewResult(numericUpDown_n_pagine.Value);
+                        ViewPag();
                     }
                     catch(Exception ex)
                     {
@@ -239,31 +241,101 @@ namespace Progetto_API
                     this.Controls.Add(panel);
                     panel.BringToFront();
                     this.Refresh();
-                }
-            int x_pag;
-            if (a > 3)
+                 }
+        }
+
+        private void ViewPag()
+        {
+            for (int i = 0; i < 7; i++)
             {
-                x_pag = a - 2;
+                string Name = "label_pag_" + i.ToString();
+                System.Windows.Forms.Label label = (System.Windows.Forms.Label)this.Controls[Name];
+                label.Visible = true;
+                label.ForeColor = Color.FromArgb(0, 38, 64);
+                label.Cursor = Cursors.Hand;
+                label.Location = new Point(label.Location.X, 2000);
+            }
+            label_pag_puntini.Visible = true;
+            label_pag_puntini.Location = new Point(label_pag_puntini.Location.X, 2000);
+            label_pag_puntini.ForeColor = Color.FromArgb(0, 38, 64);
+            label_pag_tot.Visible = true;
+            label_pag_tot.Text = label_total_pages_result.Text;
+            label_pag_tot.Location = new Point(label_pag_tot.Location.X, 2000);
+            label_pag_tot.ForeColor = Color.FromArgb(0, 38, 64);
+            label_pag_tot.Cursor = Cursors.Hand;
+            int temp = Convert.ToInt32(numericUpDown_n_pagine.Value);
+            if (numericUpDown_n_pagine.Value < 4)
+            {
+                label_pag_0.ForeColor = Color.Red;
+                for (int i = 0; i < 7; i++)
+                {
+                    string Name = "label_pag_" + i.ToString();
+                    System.Windows.Forms.Label label = (System.Windows.Forms.Label)this.Controls[Name];
+                    label.Text = (temp).ToString();
+                    temp++;
+                }
             }
             else
             {
-                x_pag = a;
+                int temp_2 = temp - 3;
+                label_pag_3.ForeColor = Color.Red;
+                if (numericUpDown_n_pagine.Value != Root_Series.total_pages)
+                {
+                    for (int i = 0; i < 7; i++)
+                    {
+                        string Name = "label_pag_" + i.ToString();
+                        System.Windows.Forms.Label label = (System.Windows.Forms.Label)this.Controls[Name];
+                        label.Text = (temp_2).ToString();
+                        temp_2++;
+                    }
+                }
+                else
+                {
+                    for (int i = 4; i < 7; i++)
+                    {
+                        string Name = "label_pag_" + i.ToString();
+                        System.Windows.Forms.Label label = (System.Windows.Forms.Label)this.Controls[Name];
+                        label.Visible = false;
+                        label_pag_puntini.Visible = false;
+                        label_pag_tot.Visible = false;
+                    }
+                }
             }
-            for (int j = 0; j < 7; j++)
+            int tot_widht = 0;
+            for (int i = 0; i < 7; i++)
             {
-                System.Windows.Forms.Label label_pag = new System.Windows.Forms.Label();
-                label_pag.Name = "label_pag_generate_" + (j);
-                label_pag.Text = (x_pag).ToString();
-                label_pag.Font = labelFont_pag;
-                label_pag.AutoSize = true;
-                label_pag.TextAlign = ContentAlignment.MiddleCenter;
-                label_pag.Location = new Point(((this.Width - (label_pag.Width)) / 2) + (j % 7) * label_pag.Width, 2000);
-                label_pag.ForeColor = Color.FromArgb(0, 38, 64);
-                //label_pag.MouseEnter += (sender, e) => { label_pag.Font = new Font(label_pag.Font, FontStyle.Underline | FontStyle.Bold); };
-                //label_pag.MouseLeave += (sender, e) => { label_pag.Font = new Font(label_pag.Font, FontStyle.Bold); };
-                label_pag.Cursor = Cursors.Hand;
-                this.Controls.Add(label_pag);
-                x_pag++;
+                string Name = "label_pag_" + i.ToString();
+                System.Windows.Forms.Label label = (System.Windows.Forms.Label)this.Controls[Name];
+                tot_widht += label.Width;
+            }
+            tot_widht += label_pag_puntini.Width + label_pag_tot.Width;
+
+            // Calcola la posizione X della prima label in modo che il blocco di label sia centrato orizzontalmente nella finestra
+            int labelsX = (this.ClientSize.Width - tot_widht) / 2;
+
+            // Imposta la posizione X di ogni label
+            int currentX = labelsX;
+            for (int i = 0; i < 7; i++)
+            {
+                string Name = "label_pag_" + i.ToString();
+                System.Windows.Forms.Label label = (System.Windows.Forms.Label)this.Controls[Name];
+                label.Location = new Point(currentX, label.Location.Y);
+                currentX += label.Width + 8;
+            }
+            label_pag_puntini.Location = new Point(label_pag_6.Location.X + label_pag_6.Width + 8, label_pag_puntini.Location.Y);
+            label_pag_tot.Location = new Point(label_pag_puntini.Location.X + label_pag_puntini.Width + 8, label_pag_tot.Location.Y);
+        }
+
+        private void label_pag_Click(object sender, EventArgs e)
+        {
+            System.Windows.Forms.Label labelClicked = sender as System.Windows.Forms.Label;
+            string labelText = labelClicked.Text;
+            //int labelNumber = Convert.ToInt32(labelText.Substring(labelText.Length - 1));
+            if (Convert.ToInt32(labelText) != numericUpDown_n_pagine.Value)
+            {
+                numericUpDown_n_pagine.Value = Convert.ToInt32(labelText);
+                buttons1_Click(sender, e);
+                this.VerticalScroll.Value = this.VerticalScroll.Minimum;
             }
         }
 
