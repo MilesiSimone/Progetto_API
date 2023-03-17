@@ -43,6 +43,7 @@
             this.buttons_avvia_ric = new Progetto_API.Buttons();
             this.label_id_series = new System.Windows.Forms.Label();
             this.textBox_id_series = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel_logo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown_n_pagine)).BeginInit();
@@ -55,7 +56,7 @@
             this.panel_logo.Controls.Add(this.label_titolo);
             this.panel_logo.Controls.Add(this.pictureBox1);
             this.panel_logo.Location = new System.Drawing.Point(0, 0);
-            this.panel_logo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel_logo.Margin = new System.Windows.Forms.Padding(4);
             this.panel_logo.Name = "panel_logo";
             this.panel_logo.Size = new System.Drawing.Size(1560, 123);
             this.panel_logo.TabIndex = 8;
@@ -79,7 +80,7 @@
             this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.pictureBox1.Image = global::Progetto_API.Properties.Resources.esss;
             this.pictureBox1.Location = new System.Drawing.Point(1316, 34);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(176, 45);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -177,7 +178,7 @@
             0,
             0});
             this.numericUpDown_n_pagine.Name = "numericUpDown_n_pagine";
-            this.numericUpDown_n_pagine.Size = new System.Drawing.Size(107, 27);
+            this.numericUpDown_n_pagine.Size = new System.Drawing.Size(35, 27);
             this.numericUpDown_n_pagine.TabIndex = 14;
             this.numericUpDown_n_pagine.Value = new decimal(new int[] {
             1,
@@ -275,7 +276,7 @@
             // 
             this.textBox_id_series.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_id_series.Location = new System.Drawing.Point(165, 171);
-            this.textBox_id_series.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBox_id_series.Margin = new System.Windows.Forms.Padding(4);
             this.textBox_id_series.Name = "textBox_id_series";
             this.textBox_id_series.Size = new System.Drawing.Size(167, 29);
             this.textBox_id_series.TabIndex = 22;
@@ -283,12 +284,24 @@
             this.textBox_id_series.Visible = false;
             this.textBox_id_series.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox_id_series_KeyPress);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(628, 395);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(69, 30);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "1000";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.ClientSize = new System.Drawing.Size(1555, 684);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox_id_series);
             this.Controls.Add(this.label_id_series);
             this.Controls.Add(this.label_total_pages);
@@ -302,7 +315,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label_torna_indietro);
             this.Controls.Add(this.panel_logo);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form2";
@@ -335,5 +348,6 @@
         private System.Windows.Forms.Label label_total_pages_result;
         private System.Windows.Forms.Label label_id_series;
         private System.Windows.Forms.TextBox textBox_id_series;
+        private System.Windows.Forms.Label label1;
     }
 }

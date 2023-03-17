@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Progetto_Banca_Client.panel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -153,6 +154,7 @@ namespace Progetto_API
             int panelHeight = 400;
 
             Font labelFont = new Font("Arial", 19, FontStyle.Bold);
+            Font labelFont_pag = new Font("Arial", 15, FontStyle.Bold);
             int a = Convert.ToInt32(n);
             int startValue = (a - 1) * 20;
             int x = startValue + 1;
@@ -238,6 +240,31 @@ namespace Progetto_API
                     panel.BringToFront();
                     this.Refresh();
                 }
+            int x_pag;
+            if (a > 3)
+            {
+                x_pag = a - 2;
+            }
+            else
+            {
+                x_pag = a;
+            }
+            for (int j = 0; j < 7; j++)
+            {
+                System.Windows.Forms.Label label_pag = new System.Windows.Forms.Label();
+                label_pag.Name = "label_pag_generate_" + (j);
+                label_pag.Text = (x_pag).ToString();
+                label_pag.Font = labelFont_pag;
+                label_pag.AutoSize = true;
+                label_pag.TextAlign = ContentAlignment.MiddleCenter;
+                label_pag.Location = new Point(((this.Width - (label_pag.Width)) / 2) + (j % 7) * label_pag.Width, 2000);
+                label_pag.ForeColor = Color.FromArgb(0, 38, 64);
+                //label_pag.MouseEnter += (sender, e) => { label_pag.Font = new Font(label_pag.Font, FontStyle.Underline | FontStyle.Bold); };
+                //label_pag.MouseLeave += (sender, e) => { label_pag.Font = new Font(label_pag.Font, FontStyle.Bold); };
+                label_pag.Cursor = Cursors.Hand;
+                this.Controls.Add(label_pag);
+                x_pag++;
+            }
         }
 
         private void Form2_FormClosing(object sender, FormClosingEventArgs e)
